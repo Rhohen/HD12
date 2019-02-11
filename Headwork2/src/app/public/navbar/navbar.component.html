@@ -1,0 +1,54 @@
+<mat-sidenav-container class="sidenav-container">
+     <mat-sidenav-content>
+    <mat-toolbar >
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+
+      <span>HEADWORK</span>
+
+       <button mat-button  routerLink="/">
+      <i class="fas fa-home"></i>
+      </button>
+
+      <button mat-button *ngIf="isAuth" routerLink="tasks">Tasks
+      <i class=""></i>
+    </button>
+
+    <button mat-button *ngIf="isAuth" routerLink="list-tasks"> Tasks List </button>
+
+    <button mat-button *ngIf="isAuth" routerLink="create-task"> Create Task </button>
+
+    <span class="example-spacer"></span>
+
+    <input type="text" placeholder="search" class="form-control" style="width: 30%;">
+
+    <button mat-button> <i class="fas fa-search"></i></button> 
+    <span class="example-spacer"></span>
+     
+    <button mat-button routerLink="login" *ngIf="!isAuth" >
+      <i class="fas fa-sign-in-alt"></i>
+    </button>
+
+    <h5 *ngIf="isAuth" style="size:10px;">{{user.name}}</h5>
+
+    <button mat-button *ngIf="isAuth" (click)="onLogout()" >
+      <i class="fas fa-sign-out-alt"></i>
+    </button>
+
+    <button mat-button *ngIf="!isAuth" routerLink="register" >
+      <i class="fas fa-user-plus"></i>
+    </button>
+    
+    
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    
+  </mat-sidenav-content>
+ 
+ </mat-sidenav-container>

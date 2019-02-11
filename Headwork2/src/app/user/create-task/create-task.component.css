@@ -1,0 +1,20 @@
+.create-task-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-task-container > * {
+  float: left;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 30px;
+  text-align: center;
+}
+
+label#mat-form-field-label-1 {
+    font-size: 30px;
+}

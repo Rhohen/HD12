@@ -1,0 +1,15 @@
+.login{
+   /* display:block;
+    width: 40%;  */
+    width: 30%;
+    position: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    text-align: center;
+    
+
+}
+mat-card-title{
+    background-color: cadetblue;
+}

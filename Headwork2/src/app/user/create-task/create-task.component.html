@@ -1,0 +1,68 @@
+<div class="create-task-container">
+  <mat-form-field class="title">
+    <input matInput placeholder="Task Name" [(ngModel)]="task.title">
+  </mat-form-field>
+  <mat-form-field >
+    <textarea [(ngModel)]="task.description" matInput placeholder="Describe your task please" cdkTextareaAutosize></textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="Select a patern"  [(value)]="task.typeDeQuestion">
+      <mat-option *ngFor="let patern of paterns" [value]="patern.value">
+        {{patern.valueView}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="Select a competence"  [(value)]="task.competences" multiple>
+      <mat-option *ngFor="let competence of competences"  [value]="competence.value">
+        {{competence.value}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput [(ngModel)]="task.question" placeholder="Ask your question"></textarea>
+  </mat-form-field>
+  <div class="image-upload" *ngIf="task.typeDeQuestion==1">
+    <mat-card class="example-card" style="width: fit-content; margin: auto;" [hidden]="!url">
+      <img mat-card-image [src]="url" style="max-height: 200px; width: auto; margin: auto;">
+    </mat-card>
+    <button type="button" mat-stroked-button (click)="imgFileInput.click()" style="margin:auto;">Add a picture</button>
+    <input hidden type='file' #imgFileInput (change)="onSelectFile($event)"/>
+  </div>
+
+
+
+  <div class="pdf-container"  *ngIf="task.typeDeQuestion==2">
+    <button type="button" mat-raised-button (click)="pdfInput.click()" style="margin:auto;" color="primary">Select pdf</button>
+    <input hidden (change)="onPdfSelected()"  #pdfInput type="file" id="file">
+    <pdf-viewer [src]="pdfSrc"  [original-size]="false" [hidden]="!pdfSrc"></pdf-viewer>
+  </div>
+
+<mat-form-field>
+    <mat-select placeholder="Select a answer type"  [(value)]="task.typeDeReponses">
+      <mat-option *ngFor="let answer of answers" [value]="answer.value">
+        {{answer.valueView}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field *ngIf="task.typeDeReponses==2">
+    <form class="input-group">
+      <input matInput type="text" class="form-control" [(ngModel)]="answer" [ngModelOptions]="{standalone: true}">
+      <button mat-raised-button (click)="onAdd()" color="primary" >
+        add
+      </button>
+    </form>
+    <div style="margin:5px 0px">
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let item of task.reponses.slice().reverse()" style="display:  flex;">
+          <span style="margin-bottom: auto;margin-right: auto;margin-top: auto;">{{item}}</span>
+          <button mat-raised-button (click)="onDelete(item)" color="warn" style="float: right">
+            Delete
+          </button>
+        </li>
+      </ul>
+    </div>
+  </mat-form-field>
+
+
+</div>

@@ -1,0 +1,28 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<h1 matLine>Tasks List</h1>
+
+<mat-form-field>
+  <mat-select placeholder="Filter by" (selectionChange)="filterChanged($event.value)">
+  	<mat-option *ngFor="let filter of filterList" [value]="filter">{{filter}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-select placeholder="Sort by" (selectionChange)="sortChanged($event.value)">
+  	<mat-option *ngFor="let sort of sortList" [value]="sort">{{sort}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-list>
+	<mat-list-item *ngFor="let task of sortedAndFilteredTasks | async">
+		<mat-divider></mat-divider>
+		<h3 matLine>{{task.label}}</h3>
+		<p matLine><span>{{task.category}}</span></p>
+		<button mat-icon-button>
+			<!--onClick({{task.id}}) pour faire une requête de la tâche voulue et afficher la view de la tâche-->
+			<mat-icon>play_circle_outline</mat-icon>
+		</button>	
+		<p matLine><span>{{task.description}}</span></p>
+		<p matLine><span>Difficulty : {{task.taskDifficulty}} Duration : {{task.taskDuration}}</span></p>
+	</mat-list-item>
+</mat-list>

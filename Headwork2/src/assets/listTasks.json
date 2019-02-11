@@ -1,0 +1,42 @@
+[
+	{
+		"idTask":"1",
+		"label":"Identify the bee",
+		"description":null,
+		"category":"botanique",
+		"taskDifficulty":5,
+		"taskDuration":30
+	},
+	{
+		"idTask":"2",
+		"label":"Code language",
+		"description":"find the programmation language of the given code",
+		"category":"programmation",
+		"taskDifficulty":3,
+		"taskDuration":10
+	},
+	{
+		"idTask":"3",
+		"label":"Easy task",
+		"description":"an easy task to accomplish",
+		"category":"texte",
+		"taskDifficulty":1,
+		"taskDuration":20
+	},
+	{
+		"idTask":"4",
+		"label":"Analyse PDF",
+		"description":"find the specified elements inside a PDF file",
+		"category":"texte",
+		"taskDifficulty":2,
+		"taskDuration":15
+	},
+	{
+		"idTask":"5",
+		"label":"Text trasncription",
+		"description":"write a text that have been handwritten",
+		"category":"texte",
+		"taskDifficulty":4,
+		"taskDuration":5
+	}
+]
