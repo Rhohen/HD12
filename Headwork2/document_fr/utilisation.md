@@ -12,5 +12,5 @@
 ---
 
 Autres documents d'information :  
-- [document post-mortem](https://github.com/Rhohen/HD12/blob/master/document_fr/post_mortem.md) ;
-- [manuel de reprise de code](https://github.com/Rhohen/HD12/blob/master/document_fr/reprise_de_code.md).
+- [document post-mortem](https://github.com/Rhohen/HD12/blob/master/Headwork2/document_fr/post_mortem.md) ;
+- [manuel de reprise de code](https://github.com/Rhohen/HD12/blob/master/Headwork2/document_fr/reprise_de_code.md).
