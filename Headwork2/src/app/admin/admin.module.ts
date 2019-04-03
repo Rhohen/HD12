@@ -9,6 +9,7 @@ import {MatGridListModule, MatCardModule, MatMenuModule,
   MatSidenavModule, MatListModule, MatTableModule,
   MatPaginatorModule, MatSortModule, MatDialogModule, MatInputModule,
   MatFormFieldModule, MatOptionModule, MatSelectModule } from '@angular/material';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import {MatGridListModule, MatCardModule, MatMenuModule,
   declarations: [
     SuperAdminComponent,
     ListUserComponent,
-    HomeAdminComponent
+    HomeAdminComponent,
+    UserDetailComponent
   ]
 })
 export class AdminModule { }
