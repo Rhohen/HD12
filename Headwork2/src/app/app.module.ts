@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminModule } from './admin/admin.module';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -25,7 +26,6 @@ import { from } from 'rxjs';
 import { ListTaskComponent } from './user/list-task/list-task.component';
 import { CreateTaskComponent } from './user/create-task/create-task.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,16 +39,16 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     CreateTaskComponent
   ],
   imports: [
-    BrowserModule,BrowserAnimationsModule,HttpClientModule,
-    AppRoutingModule,MatCheckboxModule,
-    MatGridListModule, MatCardModule, 
-    MatMenuModule,MatIconModule, 
+    BrowserModule, BrowserAnimationsModule, HttpClientModule,
+    AppRoutingModule, AdminModule, MatCheckboxModule,
+    MatGridListModule, MatCardModule,
+    MatMenuModule,MatIconModule,
     MatButtonModule, MatToolbarModule,
-    MatSidenavModule, MatListModule, 
+    MatSidenavModule, MatListModule,
     MatTableModule,MatPaginatorModule,
     MatSortModule, MatDialogModule, MatInputModule,
     MatFormFieldModule, MatOptionModule, MatSelectModule,
-     LayoutModule, FormsModule, ReactiveFormsModule,
+    LayoutModule, FormsModule, ReactiveFormsModule,
      PdfViewerModule
   ],
   providers: [DataService, AuthService],

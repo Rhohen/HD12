@@ -17,17 +17,17 @@ export class HomeComponent implements OnInit {
  // public tasks : Task[];
 
 constructor(private dataService : DataService) {
-    this.dataService.getEvents().subscribe(
+    this.dataService.getUserEvents().subscribe(
      data => {
        this.users = data
       }
-    ); 
+    );
     this.dataService.getTaskEvents().subscribe(
      data => {
-       this.tasks = data 
+       this.tasks = data
      }
-    ); 
-    
+    );
+
 
    }
 

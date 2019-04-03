@@ -13,9 +13,9 @@ import { AuthService } from 'src/app/auth/services/auth.service';
 })
 export class NavbarComponent implements OnInit, OnDestroy {
 
-  public user : User;
+  public user: User;
   isAuth = false;
-  authSubscription : Subscription;
+  authSubscription: Subscription;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -25,11 +25,11 @@ export class NavbarComponent implements OnInit, OnDestroy {
   constructor(private breakpointObserver: BreakpointObserver, private authService: AuthService) {
 
     this.user = {
-      name :this.authService.testUser.username
+      name: this.authService.testUser.username
       }
     }
 
-  ngOnInit(){
+  ngOnInit() {
     this.authSubscription = this.authService.authChange.subscribe( authStatus =>{
       this.isAuth = authStatus;
       console.log(this.isAuth);
@@ -37,7 +37,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.authSubscription.unsubscribe();
   }
 

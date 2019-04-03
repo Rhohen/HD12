@@ -10,23 +10,22 @@ import{Task} from '../../task';
 })
 export class TasksComponent implements OnInit {
 
-  datas : any;
-  public users : User[];
-  public tasks : Task[];
- // public tasks : Task[];
+  datas: any;
+  public users: User[];
+  public tasks: Task[];
 
-constructor(private dataService : DataService) {
-    this.dataService.getEvents().subscribe(
+constructor(private dataService: DataService) {
+    this.dataService.getUserEvents().subscribe(
      data => {
-       this.users = data
+       this.users = data;
       }
-    ); 
+    );
     this.dataService.getTaskEvents().subscribe(
      data => {
-       this.tasks = data 
+       this.tasks = data;
      }
-    ); 
-    
+    );
+
 
    }
 

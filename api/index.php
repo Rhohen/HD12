@@ -25,13 +25,16 @@
 */    
     $DB = new DB();
     $req = $DB->query("select * from users"); //a optimiser
+    var_dump($req);
+    die();
 
     class Event{};
     $events = array();
 
     foreach ($req as $row) {
     	$e = new Event();
-    	$e->id = $row['id'];
+        $e->id = $row['id'];
+        $e->name = $row['name'];
     	$e->hashed_password = $row['hashed_password'];
     	$e->role = $row['role'];
     	$events[] = $e ;

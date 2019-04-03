@@ -13,7 +13,7 @@ export class DataService {
 
   constructor(private http : HttpClient) { }
 
-  getEvents(): Observable<any>{
+  getUserEvents(): Observable<any>{
     return this.http.get(API_URLS.USER_URL);
   }
 
@@ -25,5 +25,5 @@ export class DataService {
     return this.http.post(REGISTER_URLS.REGISTER_URL, users);
   }
 
-  
+
 }
