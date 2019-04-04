@@ -17,7 +17,7 @@ import {MatGridListModule, MatCardModule, MatMenuModule,
   MatFormFieldModule, MatOptionModule, MatSelectModule } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
 import { NavbarComponent } from './public/navbar/navbar.component';
-import { TasksComponent } from './user/tasks/tasks.component';
+/*import { TasksComponent } from './user/tasks/tasks.component';*/
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 import { FooterComponent } from './public/footer/footer.component';

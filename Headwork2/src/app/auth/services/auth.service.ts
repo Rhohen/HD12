@@ -69,7 +69,7 @@ export class AuthService {
 
    private authSuccessful(){
         this.authChange.next(true);
-        this.route.navigate(['tasks']);
+        this.route.navigate(['list-task']);
     }
 
 
