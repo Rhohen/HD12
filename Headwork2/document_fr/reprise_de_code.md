@@ -19,6 +19,11 @@ Si une erreur relative à la version des package apparaît, exécuter la command
 
 Pour plus de détails sur la mise en place d'un projet Angular tel que celui-ci, consulter le [tutoriel Angular](https://angular.io/guide/quickstart), très complet.
 
+### 1.3. Lancement du serveur local
+Exécuter, à la racine du projet, la commande `ng serve -o`.
+
+Après quelques minutes, le serveur est lancé et le navigateur ouvre la page d'acceuil du site en local.
+
 ## 2. Organisation des fichiers du projet
 ...
 
