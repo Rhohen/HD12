@@ -1,3 +1,38 @@
-<p>
-  register works!
-</p>
+<div class="register">
+
+  <div class="regist">
+    <mat-card>
+    <mat-card-header style="background-color:aqua;">
+      <mat-card-title> <h1>Register</h1></mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form (submit)="register($event)">
+        <mat-form-field class="example-full-width">
+            <i class="fas fa-user"></i>
+            <input matInput placeholder="name" type="text" id="name" required>
+        </mat-form-field>
+    <!--    <mat-form-field class="example-full-width">
+            <i class="fas fa-edit"></i>
+            <input matInput placeholder="email " type="email" id="email" required>
+        </mat-form-field> -->
+        <mat-form-field class="example-full-width">
+            <i class="fas fa-lock"></i>
+            <input matInput placeholder=" your password " type="password" id="passwd" required>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <i class="fas fa-lock"></i>
+            <input matInput placeholder=" confirm your password" type="password" id="passwd2" required>
+        </mat-form-field>
+
+        <mat-card-actions>
+          <button mat-raised-button type="submit" color="primary" value="submit">Register</button>
+
+        </mat-card-actions>
+      </form>
+       <a routerLink="/">Cancel</a>
+    </mat-card-content>
+  </mat-card>
+  </div>
+
+</div>

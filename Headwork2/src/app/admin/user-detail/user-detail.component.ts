@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material';
 import { User } from '../../user';
 import { DataService } from 'src/app/data.service';
 import { ActivatedRoute } from '@angular/router';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-user-detail',
@@ -12,17 +13,11 @@ import { ActivatedRoute } from '@angular/router';
 export class UserDetailComponent implements OnInit {
   user: User;
   id: any;
-  constructor(private adminService: DataService, private route: ActivatedRoute) { }
+    constructor(@Inject(MAT_DIALOG_DATA) public data: User) {}
 
-  ngOnInit() {
-    this.id = this.route.snapshot.paramMap.get('id');
-    console.log(this.id);
-    this.adminService.findUserById(this.id).subscribe(
-      data => {
-        this.user = data[0];
-        console.log(this.user);
-      }
-    )
+  ngOnInit() {}
+
+  onDialogClose(){
 
   }
 

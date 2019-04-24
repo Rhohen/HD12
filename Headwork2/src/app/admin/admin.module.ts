@@ -10,13 +10,14 @@ import {MatGridListModule, MatCardModule, MatMenuModule,
   MatPaginatorModule, MatSortModule, MatDialogModule, MatInputModule,
   MatFormFieldModule, MatOptionModule, MatSelectModule } from '@angular/material';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 @NgModule({
   imports: [
     CommonModule,
     AdminRoutingModule,
     MatGridListModule, MatCardModule, MatMenuModule,
-  MatIconModule, MatButtonModule, MatToolbarModule,MatCheckboxModule,
+  MatIconModule, MatButtonModule, MatToolbarModule, MatCheckboxModule,
   MatSidenavModule, MatListModule, MatTableModule,
   MatPaginatorModule, MatSortModule, MatDialogModule, MatInputModule,
   MatFormFieldModule, MatOptionModule, MatSelectModule
@@ -26,7 +27,8 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     SuperAdminComponent,
     ListUserComponent,
     HomeAdminComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    UpdateUserComponent
   ]
 })
 export class AdminModule { }

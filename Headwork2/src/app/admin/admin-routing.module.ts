@@ -5,13 +5,15 @@ import { ListUserComponent } from './list-user/list-user.component';
 import { SuperadminGuard } from '../auth/guards/superadmin.guard';
 import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 const adminroutes: Routes = [
-  {path: 'admin-panel-control', component: SuperAdminComponent,
+  {path: 'admin-panel-control', component: SuperAdminComponent, canActivate: [SuperadminGuard],
     children:[
-      {path: 'list-user' , component: ListUserComponent},
-      {path: '',  component: HomeAdminComponent},
-      {path: 'list-user/details/:id',  component: UserDetailComponent}
+      {path: 'list-user' , component: ListUserComponent, canActivate: [SuperadminGuard]},
+      {path: '',  component: HomeAdminComponent, canActivate: [SuperadminGuard]},
+      {path: 'list-user/details/:id',  component: UserDetailComponent, canActivate: [SuperadminGuard]},
+      {path: 'list-user/update/:id',  component: UpdateUserComponent, canActivate: [SuperadminGuard]}
     ]
 }
 

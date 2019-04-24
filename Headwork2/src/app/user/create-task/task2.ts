@@ -1,6 +1,6 @@
 export class Task2{
 constructor(
-    public id : number,
+    public id: number,
     public title: String ,
     public description: String ,
     public question: String,

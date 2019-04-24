@@ -63,7 +63,7 @@ export class CreateTaskComponent implements OnInit {
  }
 
   constructor() {
-    this.task = {id:0,description:"",title:"",competences:[],image:"",pdf:"", question:"", typeDeQuestion : 0,typeDeReponses : 0, reponses:[]};
+    this.task= {id:0, description:"", title:"", competences: [], image: "", pdf: "", question: "", typeDeQuestion: 0, typeDeReponses : 0, reponses: []};
   }
 
   ngOnInit() {

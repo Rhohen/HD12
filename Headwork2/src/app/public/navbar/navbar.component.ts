@@ -13,7 +13,7 @@ import { AuthService } from 'src/app/auth/services/auth.service';
 })
 export class NavbarComponent implements OnInit, OnDestroy {
 
-  public user: User;
+  public user: any;
   isAuth = false;
   authSubscription: Subscription;
 
@@ -25,12 +25,12 @@ export class NavbarComponent implements OnInit, OnDestroy {
   constructor(private breakpointObserver: BreakpointObserver, private authService: AuthService) {
 
     this.user = {
-      name: this.authService.testUser.username
-      }
+      name: this.authService.user
+      };
     }
 
   ngOnInit() {
-    this.authSubscription = this.authService.authChange.subscribe( authStatus =>{
+    this.authSubscription = this.authService.authChange.subscribe( authStatus => {
       this.isAuth = authStatus;
       console.log(this.isAuth);
     });
@@ -41,7 +41,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this.authSubscription.unsubscribe();
   }
 
-  onLogout(){
+  onLogout() {
     this.authService.logout();
   }
 
