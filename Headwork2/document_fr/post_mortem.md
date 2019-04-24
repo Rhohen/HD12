@@ -88,7 +88,7 @@ Le profil utilisateur n'a pas pu être implémenté.
 | FS102 | Démo du site |
 | FS103 | Bouton restart |
 
-Cette partie est toujours à implementer. Le superadmin peut cependant promovoir un utilisateur en administrateur - et inversement, destituer un adminstrateur en utilisateur. Nous avons également décidé que les superadmin ne pourraient être ajoutés que manuellement, directement dans la base de données.
+Cette partie est toujours à implementer. Le superadmin peut cependant promovoir un utilisateur en administrateur - et inversement, destituer un administrateur en utilisateur. Nous avons également décidé que les superadmin ne pourraient être ajoutés que manuellement, directement dans la base de données.
 
 ## Déroulement du projet
 La communication a principalement été faite via Discord, une application regroupant un tchat écrit et vocal.<br>
