@@ -5,6 +5,7 @@ Le projet Headwork est un projet Angular, nécessitant une installation particul
 ## 1. Mise en place de l'environnement de travail
 ### 1.1. Récupération du projet sous Windows
 Sur la [page GitHub du projet](https://github.com/Rhohen/HD12), cliquer sur "Clone or Download".
+
 Télécharger l'archive et l'extraire dans le répertoire de votre choix.
 
 ### 1.2. Installation de Node.js sous Windows
