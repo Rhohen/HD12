@@ -1,13 +1,24 @@
 # Manuel de reprise de code
 
-**Langages requis** : ...
+Le projet Headwork est un projet Angular, nécessitant une installation particulière détaillée ci-dessous.
 
-...
+## 1. Mise en place de l'environnement de travail
+### 1.1. Récupération du projet sous Windows
+Sur la [page GitHub du projet](https://github.com/Rhohen/HD12), cliquer sur "Clone or Download".
+Télécharger l'archive et l'extraire dans le répertoire de votre choix.
 
-## 1. Localisation et organisation des fichiers.
-...
+### 1.2. Installation de Node.js sous Windows
+Sur le [site de Node.js](https://nodejs.org/en/download/), télécharger "Windows installer" et suivre les instructions d'installation fournies.
 
-## 2. Développement sur serveur local :
+Dans la console Windows, se positionner à la racine du projet.
+
+Exécuter la commande `npm install -g @angular/cli`.
+
+Si une erreur relative à la version des package apparaît, exécuter la commande `npm update`.
+
+Pour plus de détails sur la mise en place d'un projet Angular tel que celui-ci, consulter le [tutoriel Angular](https://angular.io/guide/quickstart), très complet.
+
+## 2. Organisation des fichiers du projet
 ...
 
 <br><br>
