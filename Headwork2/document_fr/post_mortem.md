@@ -97,7 +97,7 @@ Des réunions hebdomadaires à l'université ou en audioconférence ont aussi pe
 
 Dans un premier temps, nous avons dû prendre en main le framework Angular et mettre en place un environnement de travail sur nos machines personnelles.
 
-Nous étions partis sur une méthodologie Agile, en implémentant les fonctionnalités progressivement. Il y a cependant eu plusieurs déconvenues, à commencer par un absentéisme récurrent. Les tâches attribuées n'ont pas toutes été réalisées comme il était convenu. Le code produit était éparpillé sur des machines différentes et non centralisé sur les plateformes prévues à cet effet, certains éléments de code ont ainsi été perdus. Les effectifs ayant chutés ineluctablement, une baisse de productivité généralisé a frappé le projet de plein fouet. (bon ok, je vais pas laisser ça... ^^)
+Nous étions partis sur une méthodologie Agile, en implémentant les fonctionnalités progressivement. Il y a cependant eu plusieurs déconvenues, à commencer par un absentéisme récurrent. Les tâches attribuées n'ont pas toutes été réalisées comme il était convenu. Le code produit était éparpillé sur des machines différentes et non centralisé sur les plateformes prévues à cet effet, certains éléments de code ont ainsi été perdus. Les effectifs ayant chutés ineluctablement, une baisse de productivité généralisée a frappé le projet de plein fouet. (bon ok, je vais peut-être pas laisser ça... ^^)
 
 ## Axes d'amélioration
 
