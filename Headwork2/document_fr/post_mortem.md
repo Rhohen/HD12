@@ -9,7 +9,7 @@
 | FS12 | Récupération des informations |
 | FS13 | Actualisation du site après login |
 
-La fonctionnalité FP01 à été codé dans sa majeur partie en local. La connexion est possible, en tant qu'utilisateur, admin et superadmin via uun fichier d'utilisateurs json. Le site s'actualise en fonction des utilisateurs connectés.
+La fonctionnalité FP01 à été codé dans sa majeur partie en local. La connexion est possible, en tant qu'utilisateur, admin et superadmin via un fichier d'utilisateurs json. Le site s'actualise en fonction des utilisateurs connectés.
 
 | FP02 | Fonctionnalité principale 02 reprenant la partie d’affichage de la liste des tâches : |
 | :----------- | :------ |
