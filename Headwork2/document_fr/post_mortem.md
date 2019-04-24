@@ -91,8 +91,32 @@ Le profil utilisateur n'a pas pu être implémenté.
 Cette partie là est toujours à implementé. Le superadmin peut par contre promovoir un utilisateur en administrateur, et inversement, destituer un adminstrateur en utilisateur. Nous avons également décidé que les superadmin ne pourrait être ajouté que manuellement dans la base de données directement.
 
 ## Déroulement du projet
+La communication a principalement été faite via Discord, une application regroupant un tchat écrit et vocal.<br>
+L'outil Trello a aussi été utilisé par certains membres du groupe pour la répartition des tâches, une todo-list.<br>
+Des réunions à l'université ont aussi permis de discuter plus librement et de se répartir les tâches au cours du projet.
 
-...
+Lors des premiers jours, nous avons dû installer les logiciels nécessaires, notamment pour le serveur Apache, qui nous a posé problème.
+Nous avons essayé de mettre en place un environnement de travail sur les ordinateurs des salles de TP, mais les connexions étaient bloquées. Nous avons donc décidé d'utiliser nos machines personnelles.
+
+Une maquette (version zéro) a été définie rapidement, pour prendre en main les outils et techniques utilisés.<br>
+Avec nos maigres connaissances, nous avons mis en place le système d'inscription et de connexion.<br>
+Cette version a aussi accueilli les premières ébauches de création de sondage et de réponses.<br>
+Par la suite, une refonte graphique a été réalisée avec l'aide d'un FrameWork "Materialize", nous fournissant des feuilles de style et des exemples de mise en forme.
+
+Un système d'ajout d'amis (et de confirmation/refus de demande) a été implémenté, avec l'objectif de pouvoir partager plus facilement les sondages avec ses amis.
+
+Nous avons ensuite développé l'idée de proposer des sondages regroupants plusieurs questions, chaque question étant choisie parmi les types suivants :
+ - Réponse ouverte
+ - Réponses multiples définies par le créateur du sondage
+ - Réponses uniques définies par le créateur du sondage
+ - Choix d'une date
+ - Choix d'un horaire
+ 
+Ainsi que l'option de mettre une date limite pour répondre à un sondage.
+
+Arrivant près de la date impartie pour rendre le projet, nous n'avons pas réussi à implémenter toutes ces options. Nous n'avons pas voulu prendre le risque de développer une fonctionalité à moitié.
+
+Finalement, nous avons opté pour une version rendue proposant des sondages comprenant une question, de type réponse ouverte ou définies (multiples et uniques).
 
 
 ## Axes d'amélioration
