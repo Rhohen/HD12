@@ -32,6 +32,9 @@ Les fichiers sont organisés selon le diagramme suivant :
 ## 3. Fonctionnalités implémentées et à implémenter
 Le tableau ci-dessous détaille les fonctionnalités du site définies après analyse de l'existant.
 
+La dernière colonne indique l'état de la fonctionnalité, :heavy_check_mark: désigne une fonctionnalité implémentée et :heavy_multiplication_x: une fonctionnalité qui ne l'est pas.
+
+
 | FP01 | Fonctionnalité principale 01 reprenant la partie connexion des utilisateurs |  |
 | :--- | :--- | :---: |
 | FS11 | Tentative de login | :heavy_check_mark: |
