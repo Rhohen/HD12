@@ -97,11 +97,16 @@ Des réunions hebdomadaires à l'université ou en audioconférence ont aussi pe
 
 Dans un premier temps, nous avons dû prendre en main le framework Angular et mettre en place un environnement de travail sur nos machines personnelles.
 
-Nous étions partis sur une méthodologie Agile, en implémentant les fonctionnalités progressivement. Il y a cependant eu plusieurs déconvenues, à commencer par un absentéisme récurrent. Les tâches attribuées n'ont pas toutes été réalisées comme il était convenu. Le code produit était éparpillé sur des machines différentes et non centralisé sur les plateformes prévues à cet effet, certains éléments de code ont ainsi été perdus. Les effectifs ayant chutés ineluctablement, une baisse de productivité généralisée a frappé le projet de plein fouet. (bon ok, je vais peut-être pas laisser ça... ^^)
+Nous étions partis sur une méthodologie Agile, en implémentant les fonctionnalités progressivement. Il y a cependant eu plusieurs déconvenues, à commencer par un absentéisme récurrent. Les tâches attribuées n'ont pas toutes été réalisées comme il était convenu. Le code produit était éparpillé sur des machines différentes et non centralisé sur les plateformes prévues à cet effet, certains éléments de code ont ainsi été perdus. Les effectifs ayant chutés ineluctablement, une baisse de productivité généralisée a frappé le projet de plein fouet.
 
 ## Axes d'amélioration
+Il reste un certain nombre de fonctionnalités à implémenter, détaillées dans le [manuel de reprise de code](https://github.com/Rhohen/HD12/blob/master/Headwork2/document_fr/reprise_de_code.md). 
 
-...
+On peut également affiner l'outil de création de tâche ainsi que les catégories de tâches, permettant par exemple de proposer une carte OpenStreetMap pour localiser un lieu.
+
+Il serait également intéressant de développer une version mobile. En effet, le principe étant de séduire un maximum d'utilisateurs (crowdsourcing oblige), une version mobile permettrait une utilisation plus souple, la résolution de tâches sur les moments de temps libre (dans les transports, dans une salle d'attente...) à la manière d'un jeu de réflexion.
+
+En termes d'organisation, la taille du groupe de projet était peut-être trop grande pour une répartition des tâches efficace (14 étudiants, à l'origine). Nous avions tenté de faire des sous-équipes assignées à une tâche en particulier, sans grand succès, chacun attendant que d'autres fassent le travail. Nous aurions peut-être eu plus de résultats en ayant eu davantage de comptes à rendre individuellement, en mettant chacun face à ses responsabilités, sans doute aux détriments de l'autonomie, mais elle n'était visiblement pas envisageable.
 <br><br>
 
 ---
