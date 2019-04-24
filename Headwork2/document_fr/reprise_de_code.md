@@ -24,8 +24,8 @@ Exécuter, à la racine du projet, la commande `ng serve -o`.
 
 Après quelques minutes, le serveur est lancé et le navigateur ouvre la page d'acceuil du site en local.
 
-## 2. Organisation des fichiers du projet
-Les fichiers sont organisés selon le diagramme suivant :
+## 2. Navigation entre les pages
+Les pages sont liées selon le diagramme de navigation suivant :
 
 ![Schéma de navigation du site Headwork](img/Schema_navigation_site.png)
 
