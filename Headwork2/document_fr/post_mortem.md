@@ -9,7 +9,7 @@
 | FS12 | Récupération des informations |
 | FS13 | Actualisation du site après login |
 
-La fonctionnalité FP01 à été codé dans sa majeur partie en local. La connexion est possible, en tant qu'utilisateur, admin et superadmin via un fichier d'utilisateurs json. Le site s'actualise en fonction des utilisateurs connectés.
+La fonctionnalité FP01 a été codée dans sa majeure partie en local. La connexion est possible, en tant qu'utilisateur, admin et superadmin via un fichier d'utilisateurs json. Le site s'actualise en fonction des utilisateurs connectés.
 
 | FP02 | Fonctionnalité principale 02 reprenant la partie d’affichage de la liste des tâches |
 | :--- | :--- |
@@ -17,7 +17,7 @@ La fonctionnalité FP01 à été codé dans sa majeur partie en local. La connex
 | FS22 | Lien vers la view d’une tâche spécifique |
 | FS23 | Système de filtrage et tri des tâches |
 
-La récupération des tâches se fait entièrement en local. L'affichage des tâches permet également de les trier et de les filtrer. Le bouton play permet d'acceder à la tâche en question.
+La récupération des tâches se fait entièrement en local. L'affichage des tâches permet également de les trier et de les filtrer. Le bouton "play" permet d'accéder à la tâche en question.
 
 | FP04 | Fonctionnalité principale 04 reprenant la partie de conception et développement d’une page d’accueil |
 | :--- | :--- |
@@ -26,7 +26,7 @@ La récupération des tâches se fait entièrement en local. L'affichage des tâ
 | FS43 | Accès rapide à une liste de tâche |
 | FS44 | Actualité du site |
 
-Il n'y a pour le moment pas de différenciation de page d'accuueil en hors ligne et connecté. La présentation du site et l'accès rapide à la liste des tâches sont implementés.
+Il n'y a pour le moment pas de différenciation entre la page d'accueil hors ligne et connecté. La présentation du site et l'accès rapide à la liste des tâches sont implementés.
 
 | FP05 | Fonctionnalité principale 05 reprenant la partie d’affichage d’une tâche |
 | :--- | :--- |
@@ -34,7 +34,7 @@ Il n'y a pour le moment pas de différenciation de page d'accuueil en hors ligne
 | FS52 | Insertion du code Javascript dans l'élément tâche |
 | FS53 | Généralisation de tâche |
 
-L'affichage d'une tâche est implementé. Il est possible d'afficher uune tâche créée avec le systèeme de création de tâche ou une tâche étant contenu dans du code javascript. La généralisation de tâche a été commencé grâce à l'outil de création de tâche mais pourra être constamment améliorée à mesure que l'on veut spécifier les tâches.
+L'affichage d'une tâche est implementé. Il est possible d'afficher une tâche créée avec le système de création de tâche ou une tâche étant contenue dans du code javascript. La généralisation de tâche a été commencée grâce à l'outil de création de tâche mais pourra être améliorée pour affiner de plus en plus les types de tâches.
 
 | FP07 | Fonctionnalité principale 07 reprenant la partie de design général du site Headwork |
 | :--- | :--- |
@@ -44,14 +44,14 @@ L'affichage d'une tâche est implementé. Il est possible d'afficher uune tâche
 | FS74 | Ajout du logo |
 
 Le footer et le logo du site ont été inclus.
-La page de crédit et la FAQ doivent encore être créé.
+La page de crédit et la FAQ doivent encore être créées.
 
 | FP08 | Fonctionnalité principale 08 reprenant la partie de création d’une tâche |
 | :--- | :--- |
 | FS81 | Généralisation d’une tâche |
 | FS82 | Ajout de la tâche dans la base de données |
 
-Une page de création de tâche été créée. Il est possible d'ajouter une tâche consistant en du code javascript directement; Ou bien de créer uun tâche avec l'outil, comprenant plusieurs possiblités comme les questions à input, les QCM, l'importation d'images et de fichiers pdf...
+Une page de création de tâche été créée. Il est possible d'ajouter une tâche consistant en du code javascript directement, ou bien de créer une tâche avec l'outil, comprenant plusieurs possiblités telles que les questions à input, les QCM, l'importation d'images et de fichiers pdf...
 
 |FP09 | Fonctionnalité principale 09 reprenant le mode administrateur |
 | :--- | :--- |
@@ -60,8 +60,8 @@ Une page de création de tâche été créée. Il est possible d'ajouter une tâ
 |FS93 | Validation de tâche |
 |FS94 | Gestion des tâches |
 
-Une gestion d'utilisateur simple consistant à les bannir à été ajouté. La validation et suppression de tâche est également possible.
-La partie de création de compétence n'a pas été implémentée.
+Une gestion d'utilisateur simple permettant de les bannir a été ajoutée. La validation et suppression de tâche est également possible.
+La partie de création de compétences n'a pas été implémentée.
 
 ### Eléments à implémenter
 
@@ -72,7 +72,7 @@ La partie de création de compétence n'a pas été implémentée.
 | FS33 | Transmission des données aux éléments angular |
 | FS34 | Actualisation de la base de données |
 
-La liaison à la base de données SQL headwork n'a pas été finalisée. Des scripts de laisons php existent dans le dossier API à la racine du projet mais ils doivent être finalisés et adaptés pour chacune des fonctionnalités.
+La liaison à la base de données SQL Headwork n'a pas été finalisée. Des scripts de laisons php existent dans le dossier API à la racine du projet mais ils doivent être finalisés et adaptés pour chacune des fonctionnalités.
 
 | FP06 | Fonctionnalité principale 06 reprenant la partie profil d’un utilisateur |
 | :--- | :--- |
@@ -88,35 +88,16 @@ Le profil utilisateur n'a pas pu être implémenté.
 | FS102 | Démo du site |
 | FS103 | Bouton restart |
 
-Cette partie là est toujours à implementé. Le superadmin peut par contre promovoir un utilisateur en administrateur, et inversement, destituer un adminstrateur en utilisateur. Nous avons également décidé que les superadmin ne pourrait être ajouté que manuellement dans la base de données directement.
+Cette partie est toujours à implementer. Le superadmin peut cependant promovoir un utilisateur en administrateur - et inversement, destituer un adminstrateur en utilisateur. Nous avons également décidé que les superadmin ne pourraient être ajoutés que manuellement, directement dans la base de données.
 
 ## Déroulement du projet
 La communication a principalement été faite via Discord, une application regroupant un tchat écrit et vocal.<br>
 L'outil Trello a aussi été utilisé par certains membres du groupe pour la répartition des tâches, une todo-list.<br>
-Des réunions à l'université ont aussi permis de discuter plus librement et de se répartir les tâches au cours du projet.
+Des réunions hebdomadaires à l'université ou en audioconférence ont aussi permis de faire le point sur l'avancement et de se répartir les tâches au cours du projet. Les rapports de réunion sont disponibles sur le Drive, [ici](https://drive.google.com/drive/folders/1t8fLadVgCTGe_UEUTYtVCEY1GNZfwlm8).
 
-Lors des premiers jours, nous avons dû installer les logiciels nécessaires, notamment pour le serveur Apache, qui nous a posé problème.
-Nous avons essayé de mettre en place un environnement de travail sur les ordinateurs des salles de TP, mais les connexions étaient bloquées. Nous avons donc décidé d'utiliser nos machines personnelles.
+Dans un premier temps, nous avons dû prendre en main le framework Angular et mettre en place un environnement de travail sur nos machines personnelles.
 
-Une maquette (version zéro) a été définie rapidement, pour prendre en main les outils et techniques utilisés.<br>
-Avec nos maigres connaissances, nous avons mis en place le système d'inscription et de connexion.<br>
-Cette version a aussi accueilli les premières ébauches de création de sondage et de réponses.<br>
-Par la suite, une refonte graphique a été réalisée avec l'aide d'un FrameWork "Materialize", nous fournissant des feuilles de style et des exemples de mise en forme.
-
-Un système d'ajout d'amis (et de confirmation/refus de demande) a été implémenté, avec l'objectif de pouvoir partager plus facilement les sondages avec ses amis.
-
-Nous avons ensuite développé l'idée de proposer des sondages regroupants plusieurs questions, chaque question étant choisie parmi les types suivants :
- - Réponse ouverte
- - Réponses multiples définies par le créateur du sondage
- - Réponses uniques définies par le créateur du sondage
- - Choix d'une date
- - Choix d'un horaire
- 
-Ainsi que l'option de mettre une date limite pour répondre à un sondage.
-
-Arrivant près de la date impartie pour rendre le projet, nous n'avons pas réussi à implémenter toutes ces options. Nous n'avons pas voulu prendre le risque de développer une fonctionalité à moitié.
-
-Finalement, nous avons opté pour une version rendue proposant des sondages comprenant une question, de type réponse ouverte ou définies (multiples et uniques).
+Nous étions partis sur une méthodologie Agile, en implémentant les fonctionnalités progressivement. Il y a cependant eu plusieurs déconvenues, à commencer par un absentéisme récurrent. Les tâches attribuées n'ont pas toutes été réalisées comme il était convenu. Le code produit était éparpillé sur des machines différentes et non centralisé sur les plateformes prévues à cet effet, certains éléments de code ont ainsi été perdus.
 
 
 ## Axes d'amélioration
