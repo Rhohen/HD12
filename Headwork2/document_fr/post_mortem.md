@@ -99,6 +99,8 @@ Dans un premier temps, nous avons dû prendre en main le framework Angular et me
 
 Nous étions partis sur une méthodologie Agile, en implémentant les fonctionnalités progressivement. Il y a cependant eu plusieurs déconvenues, à commencer par un absentéisme récurrent. Les tâches attribuées n'ont pas toutes été réalisées comme il était convenu. Le code produit était éparpillé sur des machines différentes et non centralisé sur les plateformes prévues à cet effet, malgré la mise en place d'un GitHub et GitLab (avec tutoriel d'utilisation), certains éléments de code ont ainsi été perdus. Les effectifs ayant chutés ineluctablement, une baisse de productivité généralisée a frappé le projet de plein fouet.
 
+Par ailleurs, le projet était initialement séparé en deux parties distinctes : Headwork et IAT ; la partie IAT s'est complètement perdue après avoir été mise en suspens.
+
 ## Axes d'amélioration
 Il reste un certain nombre de fonctionnalités à implémenter, détaillées dans le [manuel de reprise de code](https://github.com/Rhohen/HD12/blob/master/Headwork2/document_fr/reprise_de_code.md). 
 
