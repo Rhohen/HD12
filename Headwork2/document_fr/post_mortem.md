@@ -80,6 +80,8 @@ La liaison à la base de données SQL headwork n'a pas été finalisée. Des scr
 | FS62 | Ajout d’un historique des tâches effectuées |
 | FS63 | Ajout de préférences utilisateur pour le filtrage et le tri des tâches |
 
+Le profil utilisateur n'a pas pu être implémenté.
+
 | FP10 | Fonctionnalité principale 10 reprenant le mode super admin : |
 | :----------- | :------ |
 | FS101 | Vue de crowd Artefact |
