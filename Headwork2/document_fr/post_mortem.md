@@ -1,7 +1,7 @@
 # Document post-mortem
 
 ## Etat du projet à la livraison
-### Ce qui fonctionne
+### Eléments implémentés
 
 | FP01 | Fonctionnalité principale 01 reprenant la partie connexion des utilisateurs : |
 | :----------- | :------ |
@@ -63,7 +63,7 @@ Une page de création de tâche été créée. Il est possible d'ajouter une tâ
 Une gestion d'utilisateur simple consistant à les bannir à été ajouté. La validation et suppression de tâche est également possible.
 La partie de création de compétence n'a pas été implémentée.
 
-### Ce qui ne fonctionne pas
+### Eléments à implémenter
 
 | FP03 | Fonctionnalité principale 03 reprenant la partie de connexion du front end à la base de données : |
 | :----------- | :------ |
