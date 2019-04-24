@@ -35,47 +35,47 @@ Le tableau ci-dessous détaille les fonctionnalités du site définies après an
 La dernière colonne indique l'état de la fonctionnalité, :heavy_check_mark: désigne une fonctionnalité implémentée et :heavy_multiplication_x: une fonctionnalité qui ne l'est pas.
 
 
-| FP01 | Fonctionnalité principale 01 reprenant la partie connexion des utilisateurs |  |
+| FP01 | Fonctionnalité principale 01 reprenant la partie connexion des utilisateurs | - |
 | :--- | :--- | :---: |
 | FS11 | Tentative de login | :heavy_check_mark: |
 | FS12 | Récupération des informations | :heavy_check_mark: |
 | FS13 | Actualisation du site après login | :heavy_check_mark: |
-| **FP02** | **Fonctionnalité principale 02 reprenant la partie d’affichage de la liste des tâches** |  |
+| **FP02** | **Fonctionnalité principale 02 reprenant la partie d’affichage de la liste des tâches** | - |
 | FS21 | Récupération des tâches | :heavy_check_mark: |
 | FS22 | Lien vers la view d’une tâche spécifique | :heavy_check_mark: |
 | FS23 | Système de filtrage et tri des tâches | :heavy_check_mark: |
-| **FP03** | **Fonctionnalité principale 03 reprenant la partie de connexion du front end à la base de données** |  |
+| **FP03** | **Fonctionnalité principale 03 reprenant la partie de connexion du front end à la base de données** | - |
 | FS31 | Adaptation des fonctions php avec angular | :heavy_multiplication_x: |
 | FS32 | Récupération des valeurs de retour des fonctions et traitement | :heavy_multiplication_x: |
 | FS33 | Transmission des données aux éléments angular | :heavy_multiplication_x: |
 | FS34 | Actualisation de la base de données | :heavy_multiplication_x: |
-| **FP04** | **Fonctionnalité principale 04 reprenant la partie de conception et développement d’une page d’accueil** |  |
+| **FP04** | **Fonctionnalité principale 04 reprenant la partie de conception et développement d’une page d’accueil** | - |
 | FS41 | Différenciation page d’accueil hors ligne et connecté | :heavy_multiplication_x: |
 | FS42 | Ajout d’une présentation du site | :heavy_check_mark: |
 | FS43 | Accès rapide à une liste de tâche | :heavy_check_mark: |
 | FS44 | Actualité du site | :heavy_multiplication_x: |
-| **FP05** | **Fonctionnalité principale 05 reprenant la partie d’affichage d’une tâche** |  |
+| **FP05** | **Fonctionnalité principale 05 reprenant la partie d’affichage d’une tâche** | - |
 | FS51 | Récupération de la tâche dans la base de données | :heavy_check_mark: |
 | FS52 | Insertion du code Javascript dans l'élément tâche | :heavy_check_mark: |
 | FS53 | Généralisation de tâche | :heavy_check_mark: |
-| **FP06** | **Fonctionnalité principale 06 reprenant la partie profil d’un utilisateur** |  |
+| **FP06** | **Fonctionnalité principale 06 reprenant la partie profil d’un utilisateur** | - |
 | FS61 | Refonte du système d’arbre de compétence | :heavy_multiplication_x: |
 | FS62 | Ajout d’un historique des tâches effectuées | :heavy_multiplication_x: |
 | FS63 | Ajout de préférences utilisateur pour le filtrage et le tri des tâches | :heavy_multiplication_x: |
-| **FP07** | **Fonctionnalité principale 07 reprenant la partie de design général du site Headwork** |  |
+| **FP07** | **Fonctionnalité principale 07 reprenant la partie de design général du site Headwork** | - |
 | FS71 | Ajout d’un footer | :heavy_check_mark: |
 | FS72 | Ajout d’une page de crédit | :heavy_multiplication_x: |
 | FS73 | Ajout d’une FAQ | :heavy_multiplication_x: |
 | FS74 | Ajout du logo | :heavy_check_mark: |
-| **FP08** | **Fonctionnalité principale 08 reprenant la partie de création d’une tâche** |  |
+| **FP08** | **Fonctionnalité principale 08 reprenant la partie de création d’une tâche** | - |
 | FS81 | Généralisation d’une tâche | :heavy_check_mark: |
 | FS82 | Ajout de la tâche dans la base de données | :heavy_check_mark: |
-| **FP09** | **Fonctionnalité principale 09 reprenant le mode administrateur** |  |
+| **FP09** | **Fonctionnalité principale 09 reprenant le mode administrateur** | - |
 | FS91 | Gestion des utilisateurs | :heavy_check_mark: |
 | FS92 | Création de compétences | :heavy_multiplication_x: |
 | FS93 | Validation de tâche | :heavy_check_mark: |
 | FS94 | Gestion des tâches | :heavy_check_mark: |
-| **FP10** | **Fonctionnalité principale 10 reprenant le mode super admin** |  |
+| **FP10** | **Fonctionnalité principale 10 reprenant le mode super admin** | - |
 | FS101 | Vue de crowd Artefact | :heavy_multiplication_x: |
 | FS102 | Démo du site | :heavy_multiplication_x: |
 | FS103 | Bouton restart | :heavy_multiplication_x: |
