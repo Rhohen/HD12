@@ -14,8 +14,8 @@ export class SuperadminGuard implements CanActivate {
 
         //verifier si le role est egale a user???
 
-        if(this.auth.isAuth() && this.auth.testSuperAdmin.role==='superadmin'){
-            localStorage.getItem('currentUser')
+        if (this.auth.isAuth() && this.auth.user.role === 'superadmin') {
+            localStorage.getItem('currentUser');
              return true;
          }else{
              this.route.navigate(['login']);

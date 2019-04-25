@@ -14,11 +14,11 @@ import { SuperadminGuard } from './auth/guards/superadmin.guard';
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
-  {path: 'tasks', component:TasksComponent, canActivate:[AuthGuard]},
-  {path: 'list-tasks', component:ListTaskComponent, canActivate:[AuthGuard]},
+  {path: 'tasks', component: TasksComponent, canActivate:[AuthGuard]},
+  {path: 'list-tasks', component: ListTaskComponent, canActivate:[AuthGuard]},
   {path: 'create-task', component:CreateTaskComponent, canActivate:[AuthGuard]},
-  { path: 'admin', redirectTo: 'admin-panel-control', pathMatch:'full'},
- // { path: 'admin', component: ListUserComponent, outlet: "admin" /*canActivate:[SuperadminGuard] */},
+  { path: 'admin', redirectTo: 'admin-panel-control', pathMatch: 'full', canActivate: [SuperadminGuard]},
+  { path: 'admin', component: ListUserComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent}
 ]

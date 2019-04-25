@@ -11,11 +11,10 @@ export class AuthGuard implements CanActivate {
     constructor(private route: Router, private auth: AuthService) { }
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        
-        //verifier si le role est egale a user???
+        // verifier si le role est egale a user???
 
-        if(this.auth.isAuth() && this.auth.testUser.role==='user'){
-            localStorage.getItem('currentUser')
+        if(this.auth.isAuth() && this.auth.user.role === 'user') {
+            localStorage.getItem('currentUser');
              return true;
          }else{
              this.route.navigate(['login']);

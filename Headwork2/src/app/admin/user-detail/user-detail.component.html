@@ -1,32 +1,26 @@
-<div class="register">
+<div class="User-details">
 
-  <div class="regist">
-    <mat-card>
-    <mat-card-header style="background-color:aqua;">
-      <mat-card-title> <h1>User</h1></mat-card-title>
+  <div class="User-detail" >
+    <mat-card style="height:100%">
+    <mat-card-header style="background-color:aqua; text-align:center">
+      <mat-card-title style="text-align:center"><h1>User-details</h1></mat-card-title>
     </mat-card-header>
 
     <mat-card-content>
-      <form >
-        <div>
-          <mat-form-field class="example-full-width">
-            <i class="fas fa-user"></i>
-            <input class="form-control" matInput type="text" id="name" value="{{user.name}}">
-        </mat-form-field>
-        </div>
-        <div>
-          <mat-form-field class="example-full-width">
-            <i class="fas fa-lock"></i>
-            <input class="form-control" matInput type="text" id="role" value="{{user.role}}">
-        </mat-form-field>
-        </div>
 
-        <mat-card-actions>
-          <button mat-raised-button type="submit" color="primary" value="submit">Register</button>
-          <button mat-raised-button type="submit" color="primary">Delete</button>
-        </mat-card-actions>
-      </form>
-       <a routerLink="./list-user">Cancel</a>
+        <div class="detail">
+            <span>
+                <i class="fas fa-user"></i>
+              Username: {{data.name}}
+            </span>
+        </div>
+        <div class="detail">
+          <span>
+              <i class="fas fa-lock"></i>
+              Role: {{data.role}}
+          </span>
+        </div>
+        <!--<button type="submit" class="btn btn-primary" (click)="onDialogClose()">close</button>-->
     </mat-card-content>
   </mat-card>
   </div>
