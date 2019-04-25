@@ -9,7 +9,7 @@
 | FS12 | Récupération des informations |
 | FS13 | Actualisation du site après login |
 
-La fonctionnalité FP01 a été codée dans sa majeure partie en local. La connexion est possible, en tant qu'utilisateur, admin et superadmin via un fichier d'utilisateurs json. Le site s'actualise en fonction des utilisateurs connectés.
+La fonctionnalité FP01 a été codée dans sa majeure partie en local (via des fichiers JSON d'utilisateurs). La connexion est possible, en tant qu'utilisateur, admin et superadmin via un fichier d'utilisateurs json. Le site s'actualise en fonction des utilisateurs connectés.
 
 | FP02 | Fonctionnalité principale 02 reprenant la partie d’affichage de la liste des tâches |
 | :--- | :--- |
@@ -72,7 +72,7 @@ La partie de création de compétences n'a pas été implémentée.
 | FS33 | Transmission des données aux éléments angular |
 | FS34 | Actualisation de la base de données |
 
-La liaison à la base de données SQL Headwork n'a pas été finalisée. Des scripts de laisons php existent dans le dossier API à la racine du projet mais ils doivent être finalisés et adaptés pour chacune des fonctionnalités.
+La liaison à la base de données SQL Headwork n'a pas été finalisée. Des scripts de liaison php existent dans le dossier API à la racine du projet mais ils doivent être finalisés et adaptés pour chacune des fonctionnalités.
 
 | FP06 | Fonctionnalité principale 06 reprenant la partie profil d’un utilisateur |
 | :--- | :--- |
