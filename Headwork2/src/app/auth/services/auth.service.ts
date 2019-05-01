@@ -15,8 +15,8 @@ export class AuthService {
   users: User[];
   dataUser: any;
   message: string;
-//  testUser = {id: '1', username: 'user', password: 'user', role: 'user'};
-//  testSuperAdmin = {id: '2', username: 'superadmin', password: 'superadmin', role: 'superadmin'};
+  testUser = {id: '1', username: 'user', password: 'user', role: 'user'};
+  testSuperAdmin = {id: '2', username: 'superadmin', password: 'superadmin', role: 'superadmin'};
 
   authChange = new Subject<boolean>();
 
@@ -37,10 +37,10 @@ export class AuthService {
   login(authData: AuthData) {
 
     // construit un user avec les données venant du formulaire
-    this.user = {
+    /*this.user = {
       username: authData.username,
       password: authData.password,
-      role: ' '
+      role: 'userS'
     };
 
     this.conService.getUser(authData.username).subscribe(
@@ -64,8 +64,34 @@ export class AuthService {
           console.log(this.users[0].name + ' est auth');
           this.message = 'successfull';
       }
-    } );
-    return this.user;
+    } );*/
+    //construit un user avec les données venant du formulaire
+    this.user = {
+      username: authData.username,
+      password: authData.password,
+      role : ' '
+    };
+
+    //si le user est simple user
+    if(this.user.username===this.testUser.username &&
+      this.user.password === this.testUser.password){
+        this.user.role = 'user';
+      localStorage.setItem('currentUser',  JSON.stringify(this.user));
+      //console.log(localStorage);
+      console.log('super user est auth');
+      this.message = "successfull";
+      this.authSuccessful();
+
+      //sinon s'il est admin
+    }else if(this.user.username===this.testSuperAdmin.username &&
+    this.user.password === this.testSuperAdmin.password) {
+      this.user.role = 'superadmin';
+      console.log('super admin est auth');
+       this.message = "username ou password incorrect";
+       //this.route.navigate(['admin']);
+       this.superAdminauthSuccessful();
+    }
+    return this.user
   }
 
   logout() {
@@ -88,7 +114,7 @@ export class AuthService {
 
   private authSuccessful() {
     this.authChange.next(true);
-    this.route.navigate(['tasks']);
+    this.route.navigate(['list-tasks']);
   }
   private adminSuccessful() {
     this.authChange.next(true);

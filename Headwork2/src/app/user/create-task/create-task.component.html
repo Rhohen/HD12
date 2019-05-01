@@ -64,5 +64,21 @@
     </div>
   </mat-form-field>
 
+  <mat-form-field>
+    <mat-select placeholder="Select a difficulty"  [(value)]="task.difficulty">
+      <mat-option *ngFor="let difficulty of difficulties" [value]="difficulty.value">
+        {{difficulty.valueView}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Select a duration"  [(value)]="task.duration">
+      <mat-option *ngFor="let duration of durations" [value]="duration.value">
+        {{duration.valueView}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
 
 </div>

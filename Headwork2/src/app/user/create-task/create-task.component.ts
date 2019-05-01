@@ -27,6 +27,17 @@ export class CreateTaskComponent implements OnInit {
   public answer = "";
   public url = '';
   public pdfSrc;
+  public difficulties = [
+    {value:0, valueView: 'Facile'},
+    {value:1, valueView: 'Moyenne'},
+    {value:2, valueView: 'Difficile'}
+  ];
+
+  public durations = [
+    {value:0, valueView: '5 minutes'},
+    {value:1, valueView: '10 minutes'},
+    {value:2, valueView: '15 minutes'}
+  ];
   onSelectFile(event) {
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
