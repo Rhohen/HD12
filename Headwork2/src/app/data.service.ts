@@ -31,9 +31,9 @@ export class DataService {
     return this.http.get(FINDUSER_URLS.FINDUSER_URL + Id);
   }
 
-  DeleteUser(Id: string) {
-    return this.http.delete(DELETE_URLS.DELETE_URL + Id);
+  DeleteUser(Id: String): Observable<any> {
+    console.log('la fonction est bien appele avec id: ' + Id);
+    console.log(DELETE_URLS.DELETE_URL + Id);
+    return this.http.delete('http://localhost/api/DeleteUser.php/?id=14');
   }
-
-
 }

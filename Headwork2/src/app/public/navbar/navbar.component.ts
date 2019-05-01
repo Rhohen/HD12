@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 import { User} from '../../user';
 import { AuthService } from 'src/app/auth/services/auth.service';
+import { UserModel } from 'src/app/admin/UserModel';
 
 @Component({
   selector: 'app-navbar',
@@ -13,7 +14,7 @@ import { AuthService } from 'src/app/auth/services/auth.service';
 })
 export class NavbarComponent implements OnInit, OnDestroy {
 
-  public user: any;
+  public user_name: any;
   isAuth = false;
   authSubscription: Subscription;
 
@@ -23,16 +24,14 @@ export class NavbarComponent implements OnInit, OnDestroy {
     );
 
   constructor(private breakpointObserver: BreakpointObserver, private authService: AuthService) {
-
-    this.user = {
-      name: this.authService.user
-      };
     }
 
   ngOnInit() {
     this.authSubscription = this.authService.authChange.subscribe( authStatus => {
-      this.isAuth = authStatus;
-      console.log(this.isAuth);
+    this.isAuth = authStatus;
+    this.user_name = this.authService.testUser;
+    console.log(this.user_name.username);
+    console.log(this.isAuth);
     });
 
   }

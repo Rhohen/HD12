@@ -13,15 +13,12 @@ export class AuthGuard implements CanActivate {
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         // verifier si le role est egale a user???
 
-        if(this.auth.isAuth() && this.auth.user.role === 'user') {
+        if (this.auth.isAuth() && this.auth.testUser.role === 'user') {
             localStorage.getItem('currentUser');
              return true;
-         }else{
+         } else {
              this.route.navigate(['login']);
              return false;
-         };
-    }  
-        
-
-   
+         }
+    }
 }

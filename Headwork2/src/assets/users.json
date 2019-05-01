@@ -7,51 +7,15 @@
   },
   {
     "id":2,
-    "username": "admin",
+    "username": "david",
     "password": "amdin",
     "role": "admin"
   },
   {
     "id":3,
-    "username": "superadmin",
+    "username": "guy",
     "password": "superadmin",
     "role": "superadmin"
   }
-  ,
-  {
-    "id":1,
-    "username": "user",
-    "password": "user",
-    "role": "user"
-  },
-  {
-    "id":2,
-    "username": "admin",
-    "password": "amdin",
-    "role": "admin"
-  },
-  {
-    "id":3,
-    "username": "superadmin",
-    "password": "superadmin",
-    "role": "superadmin"
-  },
-  {
-    "id":1,
-    "username": "user",
-    "password": "user",
-    "role": "user"
-  },
-  {
-    "id":2,
-    "username": "admin",
-    "password": "amdin",
-    "role": "admin"
-  },
-  {
-    "id":3,
-    "username": "superadmin",
-    "password": "superadmin",
-    "role": "superadmin"
-  }
+
 ]
