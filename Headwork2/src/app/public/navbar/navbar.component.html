@@ -12,12 +12,8 @@
 
       <span>HEADWORK</span>
 
-       <button mat-button  routerLink="/">
+    <button mat-button  routerLink="/">
       <i class="fas fa-home"></i>
-      </button>
-
-      <button mat-button *ngIf="isAuth" routerLink="tasks">Tasks
-      <i class=""></i>
     </button>
 
     <button mat-button *ngIf="isAuth" routerLink="list-tasks"> Tasks List </button>
@@ -35,8 +31,7 @@
       <i class="fas fa-sign-in-alt"></i>
     </button>
 
-    <h5 *ngIf="isAuth" style="size:10px;">{{user.name}}</h5>
-    <h5 *ngIf="isAdmin" style="size:10px;">{{user.name}}</h5>
+    <h5 *ngIf="isAuth" style="size:10px;">{{user_name.username}}</h5>
 
     <button mat-button *ngIf="isAuth" (click)="onLogout()" >
       <i class="fas fa-sign-out-alt"></i>

@@ -10,7 +10,7 @@ import { DataService } from './data.service';
 import {AuthService} from './auth/services/auth.service';
 import { HomeComponent } from './public/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
-import { ReactiveFormsModule }    from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import {MatGridListModule, MatCardModule, MatMenuModule,
   MatIconModule, MatButtonModule, MatToolbarModule,MatCheckboxModule,
   MatSidenavModule, MatListModule, MatTableModule,

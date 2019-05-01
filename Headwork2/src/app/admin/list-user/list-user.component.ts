@@ -32,8 +32,6 @@ export class ListUserComponent implements OnInit {
     data => {
       this.userModel = data;
       this.dataSource = new MatTableDataSource(this.userModel);
-     /* console.log("je suis dans list-component "+this.userModel);
-      console.log(this.dataSource); */
     }
   );
 
@@ -58,15 +56,14 @@ export class ListUserComponent implements OnInit {
 
   }
 
-  deleteUser(id: string) {
-    console.log(this.userModel);
-    console.log(id);
+  deleteUser(id: String) {
+
+ // let ID = parseInt(id);
+
+  console.log('jappelle la fonction delete');
     this.service.DeleteUser(id);
-    console.log(this.userModel);
-    console.log(this.dataSource);
+      console.log('fonction bien appelé');
     this.userModel = this.userModel.filter( el => el.id !== id);
-    console.log(this.userModel);
-    console.log(this.dataSource);
     this.dataSource = new MatTableDataSource(this.userModel);
   }
 }
