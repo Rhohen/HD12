@@ -24,9 +24,10 @@ export class CreateTaskComponent implements OnInit {
         {value : 2, valueView: 'List'}
       ];
   public competences = [
-          {value: 'Prog'},
-          {value: 'Photo'},
-          {value: 'Insecte'}
+          {value: 'Programmation'},
+          {value: 'Photographie'},
+          {value: 'Insecte'},
+          {value: 'Flore'}
         ];
   public answer = "";
   public url:any;
@@ -92,11 +93,14 @@ export class CreateTaskComponent implements OnInit {
  }
 
  onCreate(){
-   console.log(this.task);
+   this.task.id = Math.random();
+   this.httpClient.post('http://localhost:3000/tasks', this.task).subscribe((res:Response)=>{
+     console.log(res);
+   });
  }
 
   constructor(private httpClient: HttpClient) {
-    this.task= {id:0, description:"", title:"", competences: [], image: "", pdf: "", question: "", typeDeQuestion: 0, typeDeReponses : 0, reponses: [], taskDifficulty:0, taskDuration:0};
+    this.task= {id:Math.random(), title:"", description:"", question: "", typeDeQuestion: 0, image: "", pdf: "", competences: [], typeDeReponses : 0, reponses: [], taskDifficulty:0, taskDuration:0};
   }
 
   ngOnInit() {

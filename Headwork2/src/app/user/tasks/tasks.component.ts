@@ -13,9 +13,9 @@ import{Task} from '../../task';
 export class TasksComponent implements OnInit {
 
   public tasks: Observable<Task[]>;
-  public task:Task;
+  public task: Observable<Task>;
   public idValue;
-  private jsonURL = 'assets/listTasks.json';
+  private jsonURL = 'http://localhost:3000/tasks/';
 
 constructor(private http: HttpClient) {
 }
@@ -23,8 +23,8 @@ constructor(private http: HttpClient) {
   ngOnInit() {
     this.idValue = localStorage.getItem("IdValue");
     console.log(this.idValue);
-    this.tasks =  this.http.get<Task[]>(this.jsonURL);
-    this.tasks.subscribe(data => this.task = data[this.idValue]);
+    this.task =  this.http.get<Task>(this.jsonURL+this.idValue);
+    this.task.subscribe(val => console.log(val));
   }
 
 }

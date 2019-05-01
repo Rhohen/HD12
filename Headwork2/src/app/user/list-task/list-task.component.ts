@@ -3,13 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
 import { Router} from '@angular/router';
-
-export type Task = { idTask:string,
-		label: string,
-		description: string,
-		category: string,
-		taskDifficulty:number,
-		taskDuration:number };
+import{Task} from '../../task';
 
 @Component({
   selector: 'app-list-task',
@@ -19,13 +13,15 @@ export type Task = { idTask:string,
 
 export class ListTaskComponent implements OnInit {
 
-	filterList = ['None', 'Botanique', 'Programmation', 'Texte'];
+	filterList = ['None', 'Flore', 'Programmation', 'Photographie','Insecte'];
 	sortList = ['None', 'Difficulty', 'Duration'];
 
 	tasks: Observable<Task[]>;
 	sortedAndFilteredTasks: Observable<Task[]>;
 
-	private jsonURL = 'assets/listTasks.json';
+	selectedTaskID;
+
+	private jsonURL = 'http://localhost:3000/tasks';
 
 	constructor(private http: HttpClient, private route : Router) {	}
 
@@ -53,12 +49,16 @@ export class ListTaskComponent implements OnInit {
 		if (filterParam == 'None') {
 			this.sortedAndFilteredTasks = this.tasks;
 		} else {
-			this.sortedAndFilteredTasks = this.tasks.pipe(map(tasks => tasks.filter(task => task.category === filterParam.toLowerCase())));
+			this.sortedAndFilteredTasks = this.tasks.pipe(map(tasks => tasks.filter(task => task.competences.includes(filterParam))));
 		}
 	}
 
 	onClick(i : String){
-		localStorage.setItem("IdValue", JSON.stringify(i))
-		this.route.navigate(['tasks']);
+		var id = +i;
+		this.sortedAndFilteredTasks.subscribe(val => {
+			console.log(val[id].id);
+			localStorage.setItem("IdValue", JSON.stringify(val[id].id));
+			this.route.navigate(['tasks']);
+		});		
 	}
 }
