@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import{Task2} from './task2';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -9,6 +11,8 @@ import{Task2} from './task2';
 })
 export class CreateTaskComponent implements OnInit {
   public task : Task2;
+
+  public taskUrl = "assets/tasks.json"
   public paterns = [
       {value : 0, valueView: 'Base Patern'},
       {value : 1, valueView: 'Image Patern'},
@@ -25,7 +29,8 @@ export class CreateTaskComponent implements OnInit {
           {value: 'Insecte'}
         ];
   public answer = "";
-  public url = '';
+  public url:any;
+  public imgURL:any;
   public pdfSrc;
   public difficulties = [
     {value:0, valueView: 'Facile'},
@@ -38,17 +43,30 @@ export class CreateTaskComponent implements OnInit {
     {value:1, valueView: '10 minutes'},
     {value:2, valueView: '15 minutes'}
   ];
-  onSelectFile(event) {
-    if (event.target.files && event.target.files[0]) {
-      var reader = new FileReader();
 
-      reader.readAsDataURL(event.target.files[0]); // read file as data url
-
-      reader.onload = (event) => { // called once readAsDataURL is completed
-        this.url = event.target.result;
-      }
-    }
+  getImage(imageUrl: string): Observable<Blob> {
+    return this.httpClient.get(imageUrl, { responseType: 'blob' });
   }
+
+  createImageFromBlob(image: Blob) {
+    let reader = new FileReader();
+    reader.addEventListener("load", () => {
+       this.url = reader.result;
+    }, false);
+ 
+    if (image) {
+       reader.readAsDataURL(image);
+    }
+   }
+ 
+   getImageFromService() {
+       this.getImage(this.imgURL).subscribe(data => {
+         this.createImageFromBlob(data);
+         this.task.image = this.imgURL;
+       }, error => {
+         console.log(error);
+       });
+   }
 
   onPdfSelected() {
     let $img: any = document.querySelector('#file');
@@ -73,8 +91,12 @@ export class CreateTaskComponent implements OnInit {
    this.task.reponses.splice(this.task.reponses.indexOf(msg),1);
  }
 
-  constructor() {
-    this.task= {id:0, description:"", title:"", competences: [], image: "", pdf: "", question: "", typeDeQuestion: 0, typeDeReponses : 0, reponses: []};
+ onCreate(){
+   console.log(this.task);
+ }
+
+  constructor(private httpClient: HttpClient) {
+    this.task= {id:0, description:"", title:"", competences: [], image: "", pdf: "", question: "", typeDeQuestion: 0, typeDeReponses : 0, reponses: [], taskDifficulty:0, taskDuration:0};
   }
 
   ngOnInit() {

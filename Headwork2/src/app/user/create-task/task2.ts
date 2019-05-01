@@ -9,9 +9,9 @@ constructor(
     public pdf: String,//si enregistré sur serveur
     public competences: String[],
     public typeDeReponses: number,
-    public reponses: String[]
-    //public difficulty : number,
-    //public duration : number
+    public reponses: String[],
+    public taskDifficulty : number,
+    public taskDuration : number
 ){}
 
 

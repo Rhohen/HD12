@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
+import { Router} from '@angular/router';
 
 export type Task = { idTask:string,
 		label: string,
@@ -26,7 +27,7 @@ export class ListTaskComponent implements OnInit {
 
 	private jsonURL = 'assets/listTasks.json';
 
-	constructor(private http: HttpClient) {	}
+	constructor(private http: HttpClient, private route : Router) {	}
 
 	getConfig() {
 		this.tasks =  this.http.get<Task[]>(this.jsonURL);
@@ -54,5 +55,10 @@ export class ListTaskComponent implements OnInit {
 		} else {
 			this.sortedAndFilteredTasks = this.tasks.pipe(map(tasks => tasks.filter(task => task.category === filterParam.toLowerCase())));
 		}
+	}
+
+	onClick(i : String){
+		localStorage.setItem("IdValue", JSON.stringify(i))
+		this.route.navigate(['tasks']);
 	}
 }

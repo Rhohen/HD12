@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {DataService} from '../../data.service';
-import {User} from '../../user';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+import { map } from 'rxjs/operators';
+
 import{Task} from '../../task';
 
 @Component({
@@ -10,26 +12,19 @@ import{Task} from '../../task';
 })
 export class TasksComponent implements OnInit {
 
-  datas: any;
-  public users: User[];
-  public tasks: Task[];
+  public tasks: Observable<Task[]>;
+  public task:Task;
+  public idValue;
+  private jsonURL = 'assets/listTasks.json';
 
-constructor(private dataService: DataService) {
-    this.dataService.getUserEvents().subscribe(
-     data => {
-       this.users = data;
-      }
-    );
-    this.dataService.getTaskEvents().subscribe(
-     data => {
-       this.tasks = data;
-     }
-    );
-
-
-   }
+constructor(private http: HttpClient) {
+}
 
   ngOnInit() {
+    this.idValue = localStorage.getItem("IdValue");
+    console.log(this.idValue);
+    this.tasks =  this.http.get<Task[]>(this.jsonURL);
+    this.tasks.subscribe(data => this.task = data[this.idValue]);
   }
 
 }
