@@ -2,3 +2,15 @@
     color:gray;
 
 }
+
+.example-card{
+    display: flex;
+  flex-direction: column;
+}
+
+.example-card > * {
+    float: left;
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-bottom: 10px;
+  }

@@ -1,1 +1,20 @@
-<p> tasks works here </p>
+<div *ngIf="task | async; let item">
+<mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title>{{item.title}}</mat-card-title>
+        <mat-card-subtitle>{{item.description}}</mat-card-subtitle>
+    </mat-card-header>
+    <div class="image-loader" *ngIf="item.typeDeQuestion==1">
+        <img mat-card-image [src]="item.image" style="max-height: 200px; width: auto; margin: auto;">
+    </div>
+    <mat-card-content>
+        <p>{{item.question}}</p>
+        <mat-form-field>
+            <input matInput placeholder="Answer the question : ">
+        </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="primary">SUBMIT</button>
+    </mat-card-actions>
+</mat-card>
+</div>

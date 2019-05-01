@@ -8,7 +8,7 @@
   {
     "id":2,
     "username": "admin",
-    "password": "amdin",
+    "password": "admin",
     "role": "admin"
   },
   {
@@ -17,41 +17,5 @@
     "password": "superadmin",
     "role": "superadmin"
   }
-  ,
-  {
-    "id":1,
-    "username": "user",
-    "password": "user",
-    "role": "user"
-  },
-  {
-    "id":2,
-    "username": "admin",
-    "password": "amdin",
-    "role": "admin"
-  },
-  {
-    "id":3,
-    "username": "superadmin",
-    "password": "superadmin",
-    "role": "superadmin"
-  },
-  {
-    "id":1,
-    "username": "user",
-    "password": "user",
-    "role": "user"
-  },
-  {
-    "id":2,
-    "username": "admin",
-    "password": "amdin",
-    "role": "admin"
-  },
-  {
-    "id":3,
-    "username": "superadmin",
-    "password": "superadmin",
-    "role": "superadmin"
-  }
+
 ]

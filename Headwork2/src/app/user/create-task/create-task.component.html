@@ -22,15 +22,13 @@
   <mat-form-field>
     <textarea matInput [(ngModel)]="task.question" placeholder="Ask your question"></textarea>
   </mat-form-field>
-  <div class="image-upload" *ngIf="task.typeDeQuestion==1">
+
+  <div class="image-loader" *ngIf="task.typeDeQuestion==1">
     <mat-card class="example-card" style="width: fit-content; margin: auto;" [hidden]="!url">
       <img mat-card-image [src]="url" style="max-height: 200px; width: auto; margin: auto;">
     </mat-card>
-    <button type="button" mat-stroked-button (click)="imgFileInput.click()" style="margin:auto;">Add a picture</button>
-    <input hidden type='file' #imgFileInput (change)="onSelectFile($event)"/>
+    <input matInput placeholder="Image URL" type='text' [(ngModel)]="imgURL" (change)="getImageFromService()"/>
   </div>
-
-
 
   <div class="pdf-container"  *ngIf="task.typeDeQuestion==2">
     <button type="button" mat-raised-button (click)="pdfInput.click()" style="margin:auto;" color="primary">Select pdf</button>
@@ -64,5 +62,24 @@
     </div>
   </mat-form-field>
 
+  <mat-form-field>
+    <mat-select placeholder="Select a difficulty"  [(value)]="task.taskDifficulty">
+      <mat-option *ngFor="let difficulty of difficulties" [value]="difficulty.value">
+        {{difficulty.valueView}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Select a duration"  [(value)]="task.taskDuration">
+      <mat-option *ngFor="let duration of durations" [value]="duration.value">
+        {{duration.valueView}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button (click)="onCreate()" color="primary" >
+    Submit Task
+  </button>
 
 </div>

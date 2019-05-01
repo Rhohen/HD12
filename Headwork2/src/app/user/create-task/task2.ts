@@ -1,6 +1,6 @@
 export class Task2{
 constructor(
-    public id : number,
+    public id: number,
     public title: String ,
     public description: String ,
     public question: String,
@@ -9,9 +9,9 @@ constructor(
     public pdf: String,//si enregistré sur serveur
     public competences: String[],
     public typeDeReponses: number,
-    public reponses: String[]
-    //public difficulty : number,
-    //public duration : number
+    public reponses: String[],
+    public taskDifficulty : number,
+    public taskDuration : number
 ){}
 
 

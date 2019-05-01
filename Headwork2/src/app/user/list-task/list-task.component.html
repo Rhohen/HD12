@@ -14,11 +14,11 @@
 </mat-form-field>
 
 <mat-list>
-	<mat-list-item *ngFor="let task of sortedAndFilteredTasks | async">
+	<mat-list-item *ngFor="let task of sortedAndFilteredTasks | async; let i = index">
 		<mat-divider></mat-divider>
-		<h3 matLine>{{task.label}}</h3>
-		<p matLine><span>{{task.category}}</span></p>
-		<button mat-icon-button>
+		<h3 matLine>{{task.title}}</h3>
+		<p matLine><span>{{task.competences}}</span></p>
+		<button mat-icon-button (click)="onClick(i)">
 			<!--onClick({{task.id}}) pour faire une requête de la tâche voulue et afficher la view de la tâche-->
 			<mat-icon>play_circle_outline</mat-icon>
 		</button>	
