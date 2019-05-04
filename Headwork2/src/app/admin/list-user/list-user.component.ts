@@ -1,11 +1,17 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import {MatTableDataSource, MatDialog} from '@angular/material';
+import { Component, Inject, OnInit, ViewChild } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { DataService } from '../../data.service';
-import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { User } from '../../user';
-import { DataSource } from '@angular/cdk/table';
-import { UserDetailComponent } from '../user-detail/user-detail.component';
+import { HttpClient } from '@angular/common/http';
+import {MatSnackBar} from '@angular/material';
+import { Router } from '@angular/router';
+
+export interface DialogData {
+  username: string;
+  id: number;
+}
 
 @Component({
   selector: 'app-list-user',
@@ -16,54 +22,52 @@ import { UserDetailComponent } from '../user-detail/user-detail.component';
 export class ListUserComponent implements OnInit {
 
 // @ViewChild(MatPaginator) paginator: MatPaginator;
- displayedColumns: string[] = ['username', 'role', 'action'];
- userModel: User[];
- user: User;
- id: string;
- dataSource: any;
+ users: Observable<User[]>;
+ private jsonURL = 'http://localhost:3000/users';
+ userId: number;
+ username: String;
 
-
-  constructor(private service: DataService, private dialog: MatDialog, private route: Router) { }
+  constructor(private http: HttpClient, private service: DataService, private dialog: MatDialog) { }
 
   ngOnInit() {
-  // this.dataSource.paginator = this.paginator;
-
-  this.service.getUserEvents().subscribe(
-    data => {
-      this.userModel = data;
-      this.dataSource = new MatTableDataSource(this.userModel);
-    }
-  );
-
-
+    this.users = this.http.get<User[]>(this.jsonURL).pipe(map(users => users.filter(user => user.role === "user")));
   }
 
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
-
-  openDialog(id: string): void {
-
-    console.log(id);
-    this.service.findUserById(id).subscribe(
-      data => {
-        this.user = data[0];
-        const dialogRef = this.dialog.open(UserDetailComponent, {
-          width: '70%',
-          data: { name: this.user.name, role: this.user.role }
-        });
+  deleteUser(id: number) {
+    this.users.subscribe(val => {
+      this.username = val[id].username;
+      this.userId = val[id].id
+      const dialogRef = this.dialog.open(DeleteUserDialog, {
+        width: "250px",
+        data: {username: this.username, id: this.userId}
       });
+    });
+  }
+}
 
+@Component({
+  selector: 'delete-user-dialog',
+  templateUrl: 'delete-user-dialog.html',
+})
+
+export class DeleteUserDialog {
+
+  private jsonURL = 'http://localhost:3000/users/';
+
+  constructor(private http: HttpClient, private snackBar: MatSnackBar, private route : Router,
+    public dialogRef: MatDialogRef<DeleteUserDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 
-  deleteUser(id: String) {
-
- // let ID = parseInt(id);
-
-  console.log('jappelle la fonction delete');
-    this.service.DeleteUser(id);
-      console.log('fonction bien appelé');
-    this.userModel = this.userModel.filter( el => el.id !== id);
-    this.dataSource = new MatTableDataSource(this.userModel);
+  onYesClick():void {
+    const url = "http://localhost:3000/users/"+this.data.id;
+    this.http.delete(url).subscribe();
+    this.dialogRef.close();
+    this.snackBar.open("User successfully deleted", "Fermer", {duration: 5000,});
+    this.route.navigateByUrl('admin', {skipLocationChange: true}).then(()=>this.route.navigate(['list-user'])); 
   }
+
 }

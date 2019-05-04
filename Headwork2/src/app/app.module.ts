@@ -16,6 +16,8 @@ import {MatGridListModule, MatCardModule, MatMenuModule,
   MatSidenavModule, MatListModule, MatTableModule,
   MatPaginatorModule, MatSortModule, MatDialogModule, MatInputModule,
   MatFormFieldModule, MatOptionModule, MatSelectModule } from '@angular/material';
+import {MatSnackBarModule} from '@angular/material/snack-bar'; 
+import {MatTooltipModule} from '@angular/material/tooltip'; 
 import { LayoutModule } from '@angular/cdk/layout';
 import { NavbarComponent } from './public/navbar/navbar.component';
 import { TasksComponent } from './user/tasks/tasks.component';
@@ -36,7 +38,7 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     LoginComponent,
     FooterComponent,
     ListTaskComponent,
-    CreateTaskComponent
+    CreateTaskComponent,
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule, HttpClientModule,
@@ -48,6 +50,7 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     MatTableModule,MatPaginatorModule,
     MatSortModule, MatDialogModule, MatInputModule,
     MatFormFieldModule, MatOptionModule, MatSelectModule,
+    MatSnackBarModule, MatTooltipModule,
     LayoutModule, FormsModule, ReactiveFormsModule,
      PdfViewerModule
   ],

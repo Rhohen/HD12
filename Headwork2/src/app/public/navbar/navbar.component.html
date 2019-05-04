@@ -10,9 +10,9 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
 
-      <span>HEADWORK</span>
+      <img src="../../../assets/img/logo_libre_droite.png" height="60" width="187">
 
-    <button mat-button  routerLink="/">
+    <button mat-button matTooltip="Home page" routerLink="/">
       <i class="fas fa-home"></i>
     </button>
 
@@ -27,17 +27,17 @@
     <button mat-button> <i class="fas fa-search"></i></button>
     <span class="example-spacer"></span>
 
-    <button mat-button routerLink="login" *ngIf="!isAuth" >
+    <button mat-button matTooltip="Login" routerLink="login" *ngIf="!isAuth" >
       <i class="fas fa-sign-in-alt"></i>
     </button>
 
-    <h5 *ngIf="isAuth" style="size:10px;">{{user_name.username}}</h5>
+    <span *ngIf="isAuth" style="size:10px;">{{username}}</span>
 
-    <button mat-button *ngIf="isAuth" (click)="onLogout()" >
+    <button mat-button matTooltip="Sign out" *ngIf="isAuth" (click)="onLogout()" >
       <i class="fas fa-sign-out-alt"></i>
     </button>
 
-    <button mat-button *ngIf="!isAuth" routerLink="register" >
+    <button mat-button matTooltip="Register" *ngIf="!isAuth" routerLink="register" >
       <i class="fas fa-user-plus"></i>
     </button>
 

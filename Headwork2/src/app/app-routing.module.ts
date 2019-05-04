@@ -7,7 +7,7 @@ import { RegisterComponent} from './auth/register/register.component';
 import { CreateTaskComponent } from './user/create-task/create-task.component';
 import { SuperAdminComponent } from './admin/super-admin/super-admin.component';
 import { LoginComponent } from './auth/login/login.component';
-import { ListUserComponent } from './admin/list-user/list-user.component';
+import { ListUserComponent, DeleteUserDialog } from './admin/list-user/list-user.component';
 import { from } from 'rxjs';
 import { AuthGuard } from './auth/guards/auth.guard';
 import { SuperadminGuard } from './auth/guards/superadmin.guard';
@@ -25,6 +25,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [ RouterModule.forRoot(routes)],
+  entryComponents: [DeleteUserDialog],
   exports:[RouterModule],
   providers:[AuthGuard],
   declarations: []
