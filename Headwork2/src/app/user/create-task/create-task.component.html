@@ -12,13 +12,40 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
-  <mat-form-field>
-    <mat-select placeholder="Select a competence"  [(value)]="task.competences" multiple>
-      <mat-option *ngFor="let competence of competences"  [value]="competence.value">
-        {{competence.value}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+  <mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile style=    "height: 100%;">
+    <mat-list role="list">
+        <mat-list-item *ngIf="currentCompetences != table[0].value">
+          <div style="       text-align: center; width: 200px;">
+          <button  (click)="backCompetences()"  style="  background-color: transparent;  color: black;  border: 2px solid blue;">Back</button>
+          </div>
+        </mat-list-item>
+        <mat-list-item *ngFor="let competence of currentCompetences">
+          <div  style="    Display: flex;  justify-content: space-between;  width: 200px;">
+        <div style="width:10px">
+          <button style="  background-color: transparent;  color: black;  border: 2px solid blue;" (click)="onClickExpandButton(competence.value)" *ngIf="existSubCompetences(competence.value)">
+             <img src="http://cdn.onlinewebfonts.com/svg/img_439190.png" style=" width: 10px;"/>
+           </button>
+        </div>
+          <div style="">{{competence.valueView}}</div>
+          <div >
+          <button (click)="onAddCompetences(competence)" style="  background-color: transparent;  color: black;  border: 2px solid green;">
+            +
+          </button>
+          </div>
+          </div>
+        </mat-list-item>
+    </mat-list>
+  </mat-grid-tile>
+  <mat-grid-tile style="    height: 100%;">
+    <div>
+      <p *ngFor="let competence of selectedCompetences"     style="    Display: flex;  justify-content: space-between;  width: 200px;">
+        {{competence.valueView}}
+        <button (click)="delete(competence)" style="  background-color: transparent;  color: black;  border: 2px solid red;">delete</button>
+      </p>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
   <mat-form-field>
     <textarea matInput [(ngModel)]="task.question" placeholder="Ask your question"></textarea>
   </mat-form-field>

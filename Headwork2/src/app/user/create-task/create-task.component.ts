@@ -23,12 +23,34 @@ export class CreateTaskComponent implements OnInit {
         {value : 1, valueView: 'Single integer'},
         {value : 2, valueView: 'List'}
       ];
-  public competences = [
-          {value: 'Programmation'},
-          {value: 'Photographie'},
-          {value: 'Insecte'},
-          {value: 'Flore'}
-        ];
+      public competences = [
+               {value: 1, valueView : 'Programmation'},
+               {value: 12, valueView : 'Picture'},
+               {value: 34, valueView : 'Insects'}
+             ];
+       public subCompetences = [
+             {value: 64, valueView : 'Java'},
+             {value: 65, valueView : 'Haskell'},
+             {value: 66, valueView : 'Kobold'}
+       ];
+       public subsubCompetences = [
+             {value: 4, valueView : 'Ant'},
+             {value: 5, valueView : 'Bee'},
+             {value: 6, valueView : 'Beetle'}
+       ];
+       public subsubsubCompetences = [
+             {value: 7, valueView : 'Black'},
+             {value: 8, valueView : 'Red'},
+       ];
+       public table = [
+         {id: 0, value: this.competences},
+         {id: 1, value: this.subCompetences},
+         {id: 34, value: this.subsubCompetences},
+         {id: 4, value:  this.subsubsubCompetences}
+       ];
+  public currentCompetences = this.competences;
+  public selectedCompetences = [];
+
   public answer = "";
   public url:any;
   public imgURL:any;
@@ -45,6 +67,49 @@ export class CreateTaskComponent implements OnInit {
     {value:2, valueView: '15 minutes'}
   ];
 
+  onClickExpandButton(id) {
+      for (let i = 0 ; i < this.table.length; i++) {
+        if (this.table[i].id === id) {
+          this.currentCompetences = this.table[i].value;
+        }
+      }
+    }
+
+    existSubCompetences(id){
+	    for (let i = 0; this.table.length > i; i += 1) {
+		       if (this.table[i].id === id) {
+			             return true;
+		       }
+	    }
+	    return false;
+    }
+
+    backCompetences(){
+      var id = 0;
+      for (let i = 0 ; i < this.table.length; i++) {
+        if (this.table[i].value == this.currentCompetences) {
+          id = this.table[i].id;
+          break;
+        }
+      }
+      for (let i = 0; this.table.length > i; i += 1) {
+        for (let j = 0; j<this.table[i].value.length; j++) {
+             if(this.table[i].value[j].value === id){
+               this.currentCompetences = this.table[i].value;
+               break;
+             }
+		    }
+	    }
+    }
+
+    delete(competence){
+      this.selectedCompetences.splice(this.selectedCompetences.indexOf(competence), 1);
+    }
+
+    onAddCompetences(name) {
+      if(this.selectedCompetences.indexOf(name) == -1)
+        this.selectedCompetences.push(name);
+     }
   getImage(imageUrl: string): Observable<Blob> {
     return this.httpClient.get(imageUrl, { responseType: 'blob' });
   }
@@ -54,12 +119,14 @@ export class CreateTaskComponent implements OnInit {
     reader.addEventListener("load", () => {
        this.url = reader.result;
     }, false);
- 
+
     if (image) {
        reader.readAsDataURL(image);
     }
    }
- 
+
+
+
    getImageFromService() {
        this.getImage(this.imgURL).subscribe(data => {
          this.createImageFromBlob(data);
