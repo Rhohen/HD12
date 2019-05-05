@@ -31,7 +31,7 @@ export class CreateTaskComponent implements OnInit {
        public subCompetences = [
              {value: 64, valueView : 'Java'},
              {value: 65, valueView : 'Haskell'},
-             {value: 66, valueView : 'Kobold'}
+             {value: 66, valueView : 'Cobolt'}
        ];
        public subsubCompetences = [
              {value: 4, valueView : 'Ant'},
