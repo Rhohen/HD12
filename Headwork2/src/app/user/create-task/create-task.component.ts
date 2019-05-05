@@ -56,9 +56,9 @@ export class CreateTaskComponent implements OnInit {
   public imgURL:any;
   public pdfSrc;
   public difficulties = [
-    {value:0, valueView: 'Facile'},
-    {value:1, valueView: 'Moyenne'},
-    {value:2, valueView: 'Difficile'}
+    {value:0, valueView: 'Easy'},
+    {value:1, valueView: 'Medium'},
+    {value:2, valueView: 'Hard'}
   ];
 
   public durations = [
