@@ -26,7 +26,8 @@ Après quelques minutes, le serveur est lancé et le navigateur ouvre la page d'
 
 ### 1.4. Installation et lancement du serveur json
 Exécuter, dans le dossier Headwork2, la commande `npm install -g json-server`.
-Exécuter ansuite la commande `json-server --watch db.json` pour lancer le serveur json sur le port 3000.
+
+Exécuter ensuite la commande `json-server --watch db.json` pour lancer le serveur json sur le port 3000.
 
 Après quelques secondes, le serveur est lancé.
 
