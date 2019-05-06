@@ -16,15 +16,15 @@
       "reponses": [],
       "taskDifficulty": 0,
       "taskDuration": 0
+    },
+    {
+      "id": 0.22174708758577577,
+      "name": "Jhon",
+      "hashed_password": "test",
+      "role": "user"
     }
   ],
   "users": [
-    {
-      "id": 1,
-      "username": "user",
-      "password": "user",
-      "role": "user"
-    },
     {
       "id": 2,
       "username": "admin",
@@ -36,6 +36,12 @@
       "username": "superadmin",
       "password": "superadmin",
       "role": "superadmin"
+    },
+    {
+      "id": 0.46529814565867966,
+      "username": "user",
+      "password": "user",
+      "role": "user"
     }
   ]
 }

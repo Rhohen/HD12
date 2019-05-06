@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 import { User} from '../../user';
-import { AuthService } from 'src/app/auth/services/auth.service';
+import { AuthService } from '../../auth/services/auth.service';
 import { UserModel } from 'src/app/admin/UserModel';
 
 @Component({
@@ -14,9 +14,9 @@ import { UserModel } from 'src/app/admin/UserModel';
 })
 export class NavbarComponent implements OnInit, OnDestroy {
 
-  public user_name: any;
-  isAuth = false;
+  isAuth:boolean;
   authSubscription: Subscription;
+  username;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -28,11 +28,11 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.authSubscription = this.authService.authChange.subscribe( authStatus => {
-    this.isAuth = authStatus;
-    this.user_name = this.authService.testUser;
-    console.log(this.user_name.username);
-    console.log(this.isAuth);
-    });
+      this.isAuth = authStatus;
+      this.username = this.authService.username;
+      console.log("user : "+this.username);
+      console.log("auth : "+ this.isAuth);
+  });
 
   }
 

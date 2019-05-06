@@ -27,11 +27,11 @@ export class DataService {
     return this.http.post(REGISTER_URLS.REGISTER_URL, users);
   }
 
-  findUserById(Id: string): Observable<any> {
+  findUserById(Id: number): Observable<any> {
     return this.http.get(FINDUSER_URLS.FINDUSER_URL + Id);
   }
 
-  DeleteUser(Id: String): Observable<any> {
+  DeleteUser(Id: number): Observable<any> {
     console.log('la fonction est bien appele avec id: ' + Id);
     console.log(DELETE_URLS.DELETE_URL + Id);
     return this.http.delete('http://localhost/api/DeleteUser.php/?id=14');

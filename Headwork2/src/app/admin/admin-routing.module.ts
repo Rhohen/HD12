@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule , Routes } from '@angular/router';
 import { SuperAdminComponent } from './super-admin/super-admin.component';
-import { ListUserComponent } from './list-user/list-user.component';
+import { ListUserComponent, DeleteUserDialog } from './list-user/list-user.component';
 import { SuperadminGuard } from '../auth/guards/superadmin.guard';
 import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
@@ -23,6 +23,7 @@ const adminroutes: Routes = [
   imports: [ RouterModule.forChild(adminroutes)],
   exports:[RouterModule],
   providers:[SuperadminGuard],
-  declarations: []
+  declarations: [DeleteUserDialog],
+  entryComponents: [DeleteUserDialog]
 })
 export class AdminRoutingModule { }

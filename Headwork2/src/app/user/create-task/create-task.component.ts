@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import{Task2} from './task2';
+import{Task} from '../../task';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./create-task.component.css']
 })
 export class CreateTaskComponent implements OnInit {
-  public task : Task2;
+  public task : Task;
 
   public taskUrl = "assets/tasks.json"
   public paterns = [

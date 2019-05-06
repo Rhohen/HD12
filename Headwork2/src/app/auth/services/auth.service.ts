@@ -1,95 +1,74 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
-import { UserModel as User } from '../user.model';
+import { UserModel as User, UserModel } from '../user.model';
 import { AuthData } from '../auth-data.model';
-
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+import {MatSnackBar} from '@angular/material';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-   message: string ;
-  testUser = {id: '1', username: 'user', password: 'user', role: 'user'};
-  testSuperAdmin = {id: '2', username: 'superadmin', password: 'superadmin', role: 'superadmin'};
-
+  message: string ;
   authChange = new Subject<boolean>();
 
-  constructor(private route : Router) { }
+  users: Observable<UserModel[]>;
+  private jsonURL = 'http://localhost:3000/users';
+  role: String;
+  username : String;
 
-  private user: User ;
+  constructor(private http: HttpClient, private route : Router, private snackBar: MatSnackBar) { }
 
-    registerUser(authData : AuthData) {
-        this.user = {
-            username: authData.username,
-            password: authData.password,
-            role : 'user'
-        };
-    //inserer la fonction de l'insertion dans la BD
+  login(authData: AuthData) {
 
-        this.authSuccessful();
-    }
+    this.users =  this.http.get<UserModel[]>(this.jsonURL);
 
-    login(authData: AuthData) {
-
-      //construit un user avec les données venant du formulaire
-        this.user = {
-            username: authData.username,
-            password: authData.password,
-            role : ' '
-        };
-
-        //si le user est simple user
-        if(this.user.username===this.testUser.username &&
-            this.user.password === this.testUser.password){
-              this.user.role = 'user';
-            localStorage.setItem('currentUser',  JSON.stringify(this.user));
-            //console.log(localStorage);
-            console.log('super user est auth');
-            this.message = "successfull";
-            this.authSuccessful();
-
-            //sinon s'il est admin
-        }else if(this.user.username===this.testSuperAdmin.username &&
-          this.user.password === this.testSuperAdmin.password) {
-            this.user.role = 'superadmin';
-            console.log('super admin est auth');
-             this.message = "username ou password incorrect";
-             //this.route.navigate(['admin']);
-             this.superAdminauthSuccessful();
+      this.users.subscribe(val => {
+        val.forEach(element=> {
+          if(element.username === authData.username && element.password == authData.password) {
+            this.role = element.role;
+            this.username = element.username;
+            console.log("user found in database with role : "+this.role);
+          }
+        })
+        if(this.role === "user"){
+          this.authSuccessful();
+        } else if (this.role === "admin"){
+          this.adminAuthSuccessful();
+        } else if (this.role === "superadmin"){
+          this.superadminAuthSuccessful();
+        } else {
+          this.snackBar.open("User does not exist or wrong username/password, please register or try again", "Fermer", {duration: 5000,})
         }
-        return this.user
+      });
+  }
+
+    isAuth() : boolean {
+      return (this.role != null);
     }
 
     logout(){
-        this.user = null;
+        this.role = null;
         this.authChange.next(false);
         this.route.navigate(['login']);
     }
 
-    getUser(){
-        return {... this.user};
-    }
-
-    isAuth(){
-        return this.user != null ;
-    }
-
-    isAdmin(){
-        //verifie si le user est admin
-        return this.user != null && this.user.role==='superadmin'
-    }
-
-   private authSuccessful(){
+    private authSuccessful(){
         this.authChange.next(true);
         this.route.navigate(['list-tasks']);
     }
-    private superAdminauthSuccessful(){
+
+    private adminAuthSuccessful(){
       this.authChange.next(true);
       this.route.navigate(['admin']);
-  }
+    }
 
-
-
+    private superadminAuthSuccessful(){
+      this.authChange.next(true);
+      this.route.navigate(['admin']);
+    
+    }
 }
