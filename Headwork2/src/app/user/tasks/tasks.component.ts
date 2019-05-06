@@ -25,6 +25,7 @@ constructor(private http: HttpClient) {
     console.log(this.idValue);
     this.task =  this.http.get<Task>(this.jsonURL+this.idValue);
     this.task.subscribe(val => console.log(val));
+    
   }
 
 }

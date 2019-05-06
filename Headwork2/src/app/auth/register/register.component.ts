@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../user';
 import { DataService } from '../../data.service';
+import { HttpClient } from '@angular/common/http';
+import {MatSnackBar} from '@angular/material';
+import { Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-register',
@@ -11,7 +15,7 @@ export class RegisterComponent implements OnInit {
   public users: User[];
   selectUsers: User;
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private httpClient: HttpClient, private snackBar: MatSnackBar,  private route : Router) { }
 
   ngOnInit() {
   }
@@ -27,15 +31,21 @@ export class RegisterComponent implements OnInit {
     // verification de mot de pass
 
     if(passwd === passwd2) {
-      let users = new User('', name, passwd, 'user');
+      let user = new User(Math.random(), name, passwd, 'user');
 
     // appel de la methode postRegisterEvents pour enregistrer les users
-      this.dataService.postRegisterEvents(users).subscribe(
+      /*this.dataService.postRegisterEvents(users).subscribe(
         res => {
           this.iniRegister();
         }
-      );
-      console.log(users, 'users posted !!!');
+      );*/
+
+      this.httpClient.post('http://localhost:3000/users', user).subscribe((res:Response)=>{
+        this.snackBar.open("Register succeed, please connect now", "Fermer", {duration: 5000,})
+        console.log(res);
+        this.route.navigate(['login']);
+      });
+
     }
   }
   iniRegister() {
