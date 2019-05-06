@@ -2,15 +2,15 @@
   "tasks": [
     {
       "id": 0.9092851369682914,
-      "title": "Identifier l'insecte",
-      "description": "Identifier l'insecte sur la photographie",
-      "question": "Quel type d'insecte est présent sur la photo ?",
-      "typeDeQuestion": 1,
+      "title": "Identify the insect",
+      "description": "Identify the insect on the picture",
+      "question": "Which type of insect is present on the picture ?",
+      "typeDeQuestion": 0,
       "image": "https://i.imgur.com/2C4laSx.jpg",
       "pdf": "",
       "competences": [
-        "Photographie",
-        "Insecte"
+        "Picture",
+        "Insects"
       ],
       "typeDeReponses": 0,
       "reponses": [],
@@ -18,10 +18,94 @@
       "taskDuration": 0
     },
     {
-      "id": 0.22174708758577577,
-      "name": "Jhon",
-      "hashed_password": "test",
-      "role": "user"
+      "id": 0.9299811052762162,
+      "title": "Identify the ant",
+      "description": "Ant identification",
+      "question": "Please identify exactly this kind of ant",
+      "typeDeQuestion": 0,
+      "image": "https://i.imgur.com/59bnzie.jpg",
+      "pdf": "",
+      "competences": [
+        "Picture",
+        "Insects",
+        "Ant"
+      ],
+      "typeDeReponses": 0,
+      "reponses": [],
+      "taskDifficulty": 1,
+      "taskDuration": 0
+    },
+    {
+      "id": 0.8348949360375529,
+      "title": "Explain the error",
+      "description": "Analyse the code and found the error",
+      "question": "Explain the error in this code like i'm five years old",
+      "typeDeQuestion": 1,
+      "image": "https://i.imgur.com/nPyES4z.jpg",
+      "pdf": "",
+      "competences": [
+        "Programmation"
+      ],
+      "typeDeReponses": 0,
+      "reponses": [],
+      "taskDifficulty": 2,
+      "taskDuration": 2
+    },
+    {
+      "id": 0.9924819692815076,
+      "title": "test",
+      "description": "",
+      "question": "",
+      "typeDeQuestion": 0,
+      "image": "",
+      "pdf": "",
+      "competences": [],
+      "typeDeReponses": 2,
+      "reponses": [
+        "uyt",
+        "utu",
+        "tu"
+      ],
+      "taskDifficulty": 0,
+      "taskDuration": 0
+    },
+    {
+      "id": 0.9941646253469917,
+      "title": "Identify the language",
+      "description": "Found the programming language used",
+      "question": "What is the programming language used in this picture ?",
+      "typeDeQuestion": 1,
+      "image": "https://i.imgur.com/4KWG1TJ.png",
+      "pdf": "",
+      "competences": [
+        "Programmation"
+      ],
+      "typeDeReponses": 2,
+      "reponses": [
+        "Java",
+        "Python",
+        "C"
+      ],
+      "taskDifficulty": 1,
+      "taskDuration": 1
+    },
+    {
+      "id": 0.46616041954449916,
+      "title": "Bear",
+      "description": "Best bear",
+      "question": "What bear is the best bear ?",
+      "typeDeQuestion": 0,
+      "image": "",
+      "pdf": "",
+      "competences": [],
+      "typeDeReponses": 2,
+      "reponses": [
+        "Black",
+        "White",
+        "Identity theft is not a joke Jim"
+      ],
+      "taskDifficulty": 2,
+      "taskDuration": 2
     }
   ],
   "users": [
@@ -41,6 +125,24 @@
       "id": 0.46529814565867966,
       "username": "user",
       "password": "user",
+      "role": "user"
+    },
+    {
+      "id": 0.9270751778910669,
+      "username": "Bertrand",
+      "password": "bono",
+      "role": "user"
+    },
+    {
+      "id": 0.9225298790713132,
+      "username": "joseph",
+      "password": "test",
+      "role": "user"
+    },
+    {
+      "id": 0.2110442524255426,
+      "username": "Michel",
+      "password": "brasil",
       "role": "user"
     }
   ]

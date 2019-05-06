@@ -14,3 +14,26 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+.welcome{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .description{
+    display: flex;
+    /*flex-direction: column;*/
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(225, 225, 255);
+  }
+  
+  .text{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 70%;
+    background-color: white;
+    box-shadow: 5px 5px 10px rgb(210, 210, 255);
+  }

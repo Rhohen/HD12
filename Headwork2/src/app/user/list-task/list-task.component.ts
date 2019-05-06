@@ -13,7 +13,7 @@ import{Task} from '../../task';
 
 export class ListTaskComponent implements OnInit {
 
-	filterList = ['None', 'Flore', 'Programmation', 'Photographie','Insecte'];
+	filterList = ['None', 'Programmation', 'Picture','Insects', 'Java', 'Haskell', 'Cobolt', 'Ant', 'Bee', 'Beetle', 'Black', 'Red'];
 	sortList = ['None', 'Difficulty', 'Duration'];
 
 	tasks: Observable<Task[]>;

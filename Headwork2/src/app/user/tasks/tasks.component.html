@@ -1,20 +1,26 @@
-<div *ngIf="task | async; let item">
-<mat-card class="example-card">
+<div *ngIf="task | async; let item" class="task-container">
+<mat-card>
     <mat-card-header>
         <mat-card-title>{{item.title}}</mat-card-title>
         <mat-card-subtitle>{{item.description}}</mat-card-subtitle>
     </mat-card-header>
     <div class="image-loader" *ngIf="item.typeDeQuestion==1">
-        <img mat-card-image [src]="item.image" style="max-height: 200px; width: auto; margin: auto;">
+        <img mat-card-image [src]="item.image" style="max-height: 500px; width: auto; margin: auto;">
     </div>
     <mat-card-content>
         <p>{{item.question}}</p>
-        <mat-form-field>
-            <input matInput placeholder="Answer the question : ">
+        <mat-form-field *ngIf="item.typeDeReponses==0 || item.typeDeReponses==1">
+            <input matInput placeholder="Answer the question : " *ngIf="item.typeDeReponses==0">
+            <input matInput type="number" placeholder="Answer the question : " *ngIf="item.typeDeReponses==1">            
         </mat-form-field>
+        <mat-radio-group aria-label="Select one option" *ngIf="item.typeDeReponses==2">
+            <div *ngFor="let answer of responses"> 
+                <mat-radio-button  [value]='answer'>{{answer}}</mat-radio-button>
+            </div>
+        </mat-radio-group>
     </mat-card-content>
     <mat-card-actions>
-        <button mat-raised-button color="primary">SUBMIT</button>
+        <button mat-raised-button (click)='onSubmit()' color="primary">SUBMIT</button>
     </mat-card-actions>
 </mat-card>
 </div>

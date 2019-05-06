@@ -1,6 +1,5 @@
-import { Component, Inject, OnInit, ViewChild } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
-import { DataService } from '../../data.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { User } from '../../user';
@@ -27,7 +26,7 @@ export class ListUserComponent implements OnInit {
  userId: number;
  username: String;
 
-  constructor(private http: HttpClient, private service: DataService, private dialog: MatDialog) { }
+  constructor(private http: HttpClient, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.users = this.http.get<User[]>(this.jsonURL).pipe(map(users => users.filter(user => user.role === "user")));

@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import{Task} from '../../task';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { element } from '@angular/core/src/render3/instructions';
+import {MatSnackBar} from '@angular/material';
+import { Router} from '@angular/router';
 
 
 @Component({
@@ -50,7 +53,7 @@ export class CreateTaskComponent implements OnInit {
        ];
   public currentCompetences = this.competences;
   public selectedCompetences = [];
-
+  public competencesToPost = [];
   public answer = "";
   public url:any;
   public imgURL:any;
@@ -161,12 +164,16 @@ export class CreateTaskComponent implements OnInit {
 
  onCreate(){
    this.task.id = Math.random();
+   this.selectedCompetences.forEach(element => this.competencesToPost.push(element.valueView));
+   this.task.competences = this.competencesToPost;
    this.httpClient.post('http://localhost:3000/tasks', this.task).subscribe((res:Response)=>{
      console.log(res);
+     this.snackBar.open("Task created with success, you can now accomplish one", "Close", {duration: 5000,})
+      this.route.navigate(['list-tasks']);
    });
  }
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient, private snackBar: MatSnackBar,  private route : Router) {
     this.task= {id:Math.random(), title:"", description:"", question: "", typeDeQuestion: 0, image: "", pdf: "", competences: [], typeDeReponses : 0, reponses: [], taskDifficulty:0, taskDuration:0};
   }
 

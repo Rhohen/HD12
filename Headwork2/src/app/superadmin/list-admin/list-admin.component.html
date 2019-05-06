@@ -1,0 +1,25 @@
+<h3>List of Users</h3>
+
+  <mat-form-field>
+    <mat-select placeholder="Filter by" (selectionChange)="filterChanged($event.value)">
+      <mat-option *ngFor="let filter of filterList" [value]="filter">{{filter}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Sort by" (selectionChange)="sortChanged($event.value)">
+      <mat-option *ngFor="let sort of sortList" [value]="sort">{{sort}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-list>
+      <mat-list-item *ngFor="let user of sortedUsers | async; let i = index">
+        <mat-divider></mat-divider>
+        <h3 matLine>User : {{user.username}}</h3>
+        <h3 matLine>Role : {{user.role}}</h3>
+        <button mat-raised-button (click)="deleteUser(i)" color="warn">Ban User</button>
+        <button mat-raised-button (click)="upgradeUser(i)" color="primary" *ngIf="user.role === 'user'">Upgrade User Role</button>
+        <button mat-raised-button (click)="demoteUser(i)" color="primary" *ngIf="user.role === 'admin'">Demote User Role</button>			
+        <span></span>
+      </mat-list-item>
+  </mat-list>

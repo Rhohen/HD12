@@ -2,15 +2,14 @@
     color:gray;
 
 }
-
-.example-card{
-    display: flex;
-  flex-direction: column;
-}
-
-.example-card > * {
+  .task-container > * {
     float: left;
-    margin-left: 40%;
-    margin-right: 40%;
+    margin-left: 15%;
+    margin-right: 15%;
     margin-bottom: 10px;
+  }
+
+  .create-task-container {
+    display: flex;
+    flex-direction: column;
   }

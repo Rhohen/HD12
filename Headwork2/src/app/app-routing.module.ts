@@ -5,7 +5,8 @@ import { TasksComponent } from './user/tasks/tasks.component';
 import { ListTaskComponent } from './user/list-task/list-task.component';
 import { RegisterComponent} from './auth/register/register.component';
 import { CreateTaskComponent } from './user/create-task/create-task.component';
-import { SuperAdminComponent } from './admin/super-admin/super-admin.component';
+import { SuperadminComponent } from './superadmin/superadmin.component';
+import { ListAdminComponent } from './superadmin/list-admin/list-admin.component';
 import { LoginComponent } from './auth/login/login.component';
 import { ListUserComponent, DeleteUserDialog } from './admin/list-user/list-user.component';
 import { from } from 'rxjs';
@@ -20,12 +21,14 @@ const routes: Routes = [
   { path: 'admin', redirectTo: 'admin-panel-control', pathMatch: 'full'},
   { path: 'admin', component: ListUserComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  { path: 'admin', redirectTo: 'superadmin-panel-control', pathMatch: 'full'},
+  {path: 'superadmin', component: ListAdminComponent},
 ]
 
 @NgModule({
   imports: [ RouterModule.forRoot(routes)],
-  entryComponents: [DeleteUserDialog],
+  entryComponents: [],
   exports:[RouterModule],
   providers:[AuthGuard],
   declarations: []

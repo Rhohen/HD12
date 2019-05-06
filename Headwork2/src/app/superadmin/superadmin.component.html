@@ -1,0 +1,11 @@
+<mat-sidenav-container class="example-container">
+    <mat-sidenav mode="side" opened>
+        <mat-nav-list>
+          <mat-list-item> <a routerLink="./list-admin"> Admin Management </a> </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item> <a routerLink="./crowd-artifact"> Crowd Artifact </a> </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>Superadmin Management</mat-sidenav-content>
+    <router-outlet></router-outlet>
+</mat-sidenav-container>

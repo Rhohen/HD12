@@ -68,7 +68,7 @@ export class AuthService {
 
     private superadminAuthSuccessful(){
       this.authChange.next(true);
-      this.route.navigate(['admin']);
+      this.route.navigate(['superadmin']);
     
     }
 }
