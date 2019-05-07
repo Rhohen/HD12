@@ -22,7 +22,14 @@ Pour plus de détails sur la mise en place d'un projet Angular tel que celui-ci,
 ### 1.3. Lancement du serveur local
 Exécuter, à la racine du projet, la commande `ng serve -o`.
 
-Après quelques minutes, le serveur est lancé et le navigateur ouvre la page d'acceuil du site en local.
+Après quelques minutes, le serveur est lancé et le navigateur ouvre la page d'accueil du site en local.
+
+### 1.4. Installation et lancement du serveur json
+Exécuter, dans le dossier Headwork2, la commande `npm install -g json-server`.
+
+Exécuter ensuite la commande `json-server --watch db.json` pour lancer le serveur json sur le port 3000.
+
+Après quelques secondes, le serveur est lancé.
 
 ## 2. Navigation entre les pages
 Les pages sont liées selon le diagramme de navigation suivant :
