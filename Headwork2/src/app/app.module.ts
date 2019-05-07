@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminModule } from './admin/admin.module';
 import { DeleteUserDialog } from './admin/list-user/list-user.component';
+import { DeleteTaskDialog } from './admin/list-tasks/list-tasks.component';
 import { UpdateUserDialog } from './superadmin/list-admin/list-admin.component';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -45,6 +46,7 @@ import { ListAdminComponent } from './superadmin/list-admin/list-admin.component
     CreateTaskComponent,
     SuperadminComponent,
     DeleteUserDialog,
+    DeleteTaskDialog,
     ListAdminComponent,
     UpdateUserDialog,
   ],
@@ -64,7 +66,7 @@ import { ListAdminComponent } from './superadmin/list-admin/list-admin.component
   ],
   providers: [DataService, AuthService],
   bootstrap: [AppComponent],
-  entryComponents: [DeleteUserDialog, UpdateUserDialog]
+  entryComponents: [DeleteUserDialog, UpdateUserDialog, DeleteTaskDialog]
 
 })
 export class AppModule { }

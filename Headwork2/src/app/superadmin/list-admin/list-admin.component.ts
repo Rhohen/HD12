@@ -110,7 +110,7 @@ export class UpdateUserDialog {
     const url = "http://localhost:3000/users/"+this.data.id;
     this.http.delete(url).subscribe();
     this.dialogRef.close();
-    this.snackBar.open("User successfully updated", "Fermer", {duration: 5000,});
+    this.snackBar.open("User successfully updated", "Close", {duration: 5000,});
     this.route.navigateByUrl('superadmin', {skipLocationChange: true}).then(()=>this.route.navigate(['list-admin'])); 
   }
 

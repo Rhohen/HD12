@@ -20,6 +20,10 @@
 
     <button mat-button *ngIf="isAuth" routerLink="create-task"> Create Task </button>
 
+    <button mat-button *ngIf="isAdmin" routerLink="admin"> Administration </button>
+
+    <button mat-button *ngIf="isSuperadmin" routerLink="superadmin"> Super Administration </button>
+
     <span class="example-spacer"></span>
 
     <input type="text" placeholder="search" class="form-control" style="width: 30%;">

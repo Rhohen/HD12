@@ -15,6 +15,8 @@ import { UserModel } from 'src/app/admin/UserModel';
 export class NavbarComponent implements OnInit, OnDestroy {
 
   isAuth:boolean;
+  isAdmin:boolean;
+  isSuperadmin:boolean;
   authSubscription: Subscription;
   username;
 
@@ -32,6 +34,14 @@ export class NavbarComponent implements OnInit, OnDestroy {
       this.username = this.authService.username;
       console.log("user : "+this.username);
       console.log("auth : "+ this.isAuth);
+      if(this.authService.role==='admin'){
+        this.isAdmin=true;
+        this.isSuperadmin=false;
+      }
+      if(this.authService.role==='superadmin'){
+        this.isAdmin=true;
+        this.isSuperadmin=true;
+      }
   });
 
   }
@@ -42,6 +52,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   onLogout() {
     this.authService.logout();
+    this.isAdmin=false;
+    this.isSuperadmin=false;
   }
 
 }

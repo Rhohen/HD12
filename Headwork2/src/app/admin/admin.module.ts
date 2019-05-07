@@ -11,6 +11,7 @@ import {MatGridListModule, MatCardModule, MatMenuModule,
   MatFormFieldModule, MatOptionModule, MatSelectModule } from '@angular/material';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
+import { ListTasksComponent } from './list-tasks/list-tasks.component';
 
 @NgModule({
   imports: [
@@ -28,7 +29,8 @@ import { UpdateUserComponent } from './update-user/update-user.component';
     ListUserComponent,
     HomeAdminComponent,
     UserDetailComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    ListTasksComponent
   ]
 })
 export class AdminModule { }

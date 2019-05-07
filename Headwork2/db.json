@@ -52,24 +52,6 @@
       "taskDuration": 2
     },
     {
-      "id": 0.9924819692815076,
-      "title": "test",
-      "description": "",
-      "question": "",
-      "typeDeQuestion": 0,
-      "image": "",
-      "pdf": "",
-      "competences": [],
-      "typeDeReponses": 2,
-      "reponses": [
-        "uyt",
-        "utu",
-        "tu"
-      ],
-      "taskDifficulty": 0,
-      "taskDuration": 0
-    },
-    {
       "id": 0.9941646253469917,
       "title": "Identify the language",
       "description": "Found the programming language used",

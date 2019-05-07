@@ -65,8 +65,8 @@ export class DeleteUserDialog {
     const url = "http://localhost:3000/users/"+this.data.id;
     this.http.delete(url).subscribe();
     this.dialogRef.close();
-    this.snackBar.open("User successfully deleted", "Fermer", {duration: 5000,});
-    this.route.navigateByUrl('admin', {skipLocationChange: true}).then(()=>this.route.navigate(['list-user'])); 
+    this.snackBar.open("User successfully deleted", "Close", {duration: 5000,});
+    this.route.navigateByUrl('admin'); 
   }
 
 }
